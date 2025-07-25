@@ -3,6 +3,7 @@
 */
 
 // Imports
+@import "clock.ck"
 @import {"etune2/voice1score.ck", "etune2/voice2score.ck"}
 @import "notation.ck"
 @import "tuning.ck"
@@ -68,7 +69,7 @@ public class Orchestrator {
         return voiceScores;
     }
 
-    fun void run(int opusIdx) {
+    fun void run(int opusIdx, Clock clock) {
         // Get scores based on opus number
         this.getVoiceScores(opusIdx) @=> Score voiceScores[];
 
@@ -76,10 +77,13 @@ public class Orchestrator {
         for (int voiceIdx; voiceIdx < this.voicePitchCV.size(); voiceIdx++) {
             Voice voice(voiceIdx, this.voicePitchCV[voiceIdx], this.voiceEnv[voiceIdx]);
 
+            // Sync voice to main clock
+            voice.setClock(clock);
+
             // Set voice scenes
             voiceScores[voiceIdx] @=> Score activeScore;
             voice.setScenes(activeScore.scenes);
-            activeScore.printDur();
+            activeScore.printDur(clock);
 
             // TODO: remove this when done testing
             EDO edo12(12);

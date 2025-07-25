@@ -37,5 +37,5 @@ Orchestrator orchestrator(NUM_VOICES);
 spork ~ clock.signalPulse();
 clock.turnOn();
 
-orchestrator.run(opusIdx);
+orchestrator.run(opusIdx, clock);
 clock.turnOff();

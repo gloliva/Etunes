@@ -1,5 +1,9 @@
-// Imports
+// Local imports
+@import "clock.ck"
 @import "tuning.ck"
+
+// Package imports
+@import "smuck"
 
 
 public class Note {
@@ -9,16 +13,16 @@ public class Note {
     float amp;
 
     // Timing variables
-    dur beat;
+    float beatValue;
     dur attack;
-    dur sustain;
     dur release;
 
-    fun @construct(string noteInfo, dur beat) {
-        Note(noteInfo, beat, 0::ms, 0::ms);
+    fun @construct(string noteInfo, string rhythmInfo) {
+        Note(noteInfo, rhythmInfo, 0::ms, 0::ms);
     }
 
-    fun @construct(string noteInfo, dur beat, dur attack, dur release) {
+    fun @construct(string noteInfo, string rhythmInfo, dur attack, dur release) {
+        // Parse pitch information
         // Replace delimeter "|" with empty space " " for string tokenizer
         noteInfo.replace("|", " ");
 
@@ -28,7 +32,7 @@ public class Note {
 
         0 => int degree;
         0 => int octaveDiff;
-        1. => float amp;
+        0.5 => float amp;
 
         while (strtok.more()) {
             strtok.next() => string token;
@@ -47,23 +51,25 @@ public class Note {
             }
         }
 
-        // Note variables
+        // Pitch variables
         degree => this.degree;
         octaveDiff => this.octaveDiff;
         amp => this.amp;
 
-        // Duration variables
-        beat => this.beat;
+        // Parse rhythm information
+        Smuckish.rhythms(rhythmInfo)[0] => float beatValue;
+
+        // Rhythm variables
+        beatValue => this.beatValue;
         attack => this.attack;
         release => this.release;
-        beat - attack - release => this.sustain;
     }
 }
 
 
 public class RestNote extends Note {
-    fun @construct(dur beat) {
-        Note("0|a0.", beat);
+    fun @construct(string rhythmInfo) {
+        Note("0|a0.", rhythmInfo);
     }
 }
 
@@ -72,16 +78,16 @@ public class Sequence {
     Note notes[];
     int repeats;
     int size;
-    dur seqDur;
+    float totalBeatValue;
 
     fun @construct(Note notes[], int repeats) {
         notes @=> this.notes;
         repeats => this.repeats;
         this.notes.size() => this.size;
-        0::samp => this.seqDur;
+        0. => this.totalBeatValue;
 
         for (Note note : this.notes) {
-            this.seqDur + note.beat => this.seqDur;
+            this.totalBeatValue + note.beatValue => this.totalBeatValue;
         }
     }
 }
@@ -104,18 +110,18 @@ public class Score {
     Scene scenes[0];
     int voiceNum;
 
-    fun void printDur() {
+    fun void printDur(Clock clock) {
         chout <= "Voice Number: " <= this.voiceNum <= IO.nl();
 
         for (int idx; idx < this.scenes.size(); idx++) {
             this.scenes[idx] @=> Scene scene;
-            0::ms => dur sceneLength;
+            0::ms => dur sceneDur;
 
             for (Sequence seq : scene.seqs) {
-                (seq.seqDur * seq.repeats) + sceneLength => sceneLength;
+                ((seq.totalBeatValue * clock.quarterNote) * seq.repeats) + sceneDur => sceneDur;
             }
 
-            <<< "   ", "Scene", idx, "duration: ", sceneLength / 44100. >>>;
+            <<< "   ", "Scene", idx, "Approv duration:", sceneDur / 44100., "based on Tempo BPM:", clock.tempo >>>;
         }
     }
 }

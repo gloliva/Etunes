@@ -6,10 +6,10 @@ class Scene1 extends Scene {
     fun @construct() {
         Sequence seq1A(
             [
-                new Note("0|a1.0", 250::ms, 25::ms, 75::ms),
-                new Note("7|a0.8", 250::ms, 25::ms, 75::ms),
-                new Note("4|a0.6", 250::ms, 25::ms, 75::ms),
-                new Note("7|a0.8", 250::ms, 25::ms, 75::ms),
+                new Note("0|a1.0", "e", 25::ms, 75::ms),
+                new Note("7|a0.8", "e", 25::ms, 75::ms),
+                new Note("4|a0.6", "e", 25::ms, 75::ms),
+                new Note("7|a0.8", "e", 25::ms, 75::ms),
             ],
             4
         );
@@ -24,10 +24,10 @@ class Scene2 extends Scene {
     fun @construct() {
         Sequence seq1A(
             [
-                new Note("3|a1.0", 250::ms, 25::ms, 75::ms),
-                new Note("10|a0.8", 250::ms, 25::ms, 75::ms),
-                new Note("7|a0.6", 250::ms, 25::ms, 75::ms),
-                new Note("10|a0.8", 250::ms, 25::ms, 75::ms),
+                new Note("3|a1.0", "e", 25::ms, 75::ms),
+                new Note("10|a0.8", "e", 25::ms, 75::ms),
+                new Note("7|a0.6", "e", 25::ms, 75::ms),
+                new Note("10|a0.8", "e", 25::ms, 75::ms),
             ],
             4
         );

@@ -3,6 +3,7 @@
 */
 
 // Imports
+@import "clock.ck"
 @import "notation.ck"
 @import "tuning.ck"
 
@@ -14,6 +15,9 @@ public class Voice {
 
     // Amp envelope
     Envelope @ voiceEnv;
+
+    // Tempo sync
+    Clock @ clock;
 
     // Tuning
     Tuning @ tuning;
@@ -27,6 +31,10 @@ public class Voice {
         voiceEnv @=> this.voiceEnv;
     }
 
+    fun void setClock(Clock clock) {
+        clock @=> this.clock;
+    }
+
     fun void setTuning(Tuning tuning) {
         tuning @=> this.tuning;
     }
@@ -36,6 +44,12 @@ public class Voice {
     }
 
     fun void play() {
+        if (this.clock == null || this.tuning == null || this.scenes == null) {
+            cherr <= "ERROR: Need to set clock, tuning, and scenes for Voice Num: " <= this.voiceIdx + 1 <= IO.nl();
+            cherr <= "Terminating early." <= IO.nl();
+            return;
+        }
+
         // Loop through scenes
         for (int sceneIdx; sceneIdx < this.scenes.size(); sceneIdx++) {
             chout <= "Voice " <= this.voiceIdx + 1 <= " Scene " <= sceneIdx <= IO.nl();
@@ -52,7 +66,7 @@ public class Voice {
 
                         // Trigger Note
                         spork ~ this.triggerEnv(note);
-                        note.beat => now;
+                        clock.quarterNote * note.beatValue => now;
                     }
                 }
             }
@@ -65,7 +79,7 @@ public class Voice {
         note.attack => now;
 
         // Sustain
-        note.sustain => now;
+        (clock.quarterNote * note.beatValue) - note.attack - note.release => now;
 
         // Ramp down
         this.voiceEnv.ramp(note.release, 0.);
