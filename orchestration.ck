@@ -5,8 +5,8 @@
 // Imports
 @import "clock.ck"
 @import {"etune2/metadata.ck", "etune2/voice1score.ck", "etune2/voice2score.ck"}
+@import "metadata.ck"
 @import "notation.ck"
-@import "score.ck"
 @import "tuning.ck"
 @import "voice.ck"
 

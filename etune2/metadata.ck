@@ -1,4 +1,4 @@
-@import "../score.ck"
+@import "../metadata.ck"
 
 
 public class Etune2Metadata extends ScoreMetadata {

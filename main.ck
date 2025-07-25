@@ -10,8 +10,8 @@
 
 // Imports
 @import "clock.ck"
+@import "metadata.ck"
 @import "orchestration.ck"
-@import "score.ck"
 
 
 // Command line args
