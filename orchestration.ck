@@ -4,8 +4,9 @@
 
 // Imports
 @import "clock.ck"
-@import {"etune2/voice1score.ck", "etune2/voice2score.ck"}
+@import {"etune2/metadata.ck", "etune2/voice1score.ck", "etune2/voice2score.ck"}
 @import "notation.ck"
+@import "score.ck"
 @import "tuning.ck"
 @import "voice.ck"
 
@@ -18,6 +19,23 @@ public class Orchestrator {
 
     // Run state
     int voiceDone[];
+
+    fun static ScoreMetadata getScoreMetadata(int opusIdx) {
+        ScoreMetadata @ metadata;
+
+        if (opusIdx == 1) {
+
+        } else if (opusIdx == 2) {
+            new Etune2Metadata() @=> metadata;
+        } else if (opusIdx == 3) {
+
+        } else {
+            cherr <= "ERROR: Invalid Opus number: " <= opusIdx <= IO.nl();
+            me.exit();
+        }
+
+        return metadata;
+    }
 
     fun @construct(int numVoices) {
         Step voicePitchCV[numVoices];

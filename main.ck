@@ -11,6 +11,7 @@
 // Imports
 @import "clock.ck"
 @import "orchestration.ck"
+@import "score.ck"
 
 
 // Command line args
@@ -18,19 +19,17 @@
 if (me.args()) me.arg(0) => Std.atoi => opusIdx;
 
 
-// Defs
-// TODO: these should be piece specific
-140. => float TEMPO;
-2 => int NUM_VOICES;
+// Score Metadata
+Orchestrator.getScoreMetadata(opusIdx) @=> ScoreMetadata metadata;
 
 
 // Clock
-Clock clock(TEMPO);
+Clock clock(metadata.tempo);
 clock.connectToDac(14, 15);
 
 
 // Orchestration
-Orchestrator orchestrator(NUM_VOICES);
+Orchestrator orchestrator(metadata.numVoices);
 
 
 // Run
