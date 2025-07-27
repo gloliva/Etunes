@@ -6,10 +6,11 @@ class Scene1 extends Scene {
     fun @construct() {
         Sequence seq1A(
             [
-                new Note("5|o1|a0.5", "e", 25::ms, 75::ms),
-                new Note("5|o1|a1.0", "e", 25::ms, 75::ms),
-                new Note("5|o1|a0.7", "e", 25::ms, 75::ms),
-                new Note("5|o1|a1.0", "e", 25::ms, 75::ms),
+                new RestNote("h."),
+                new Note("7|o1|a0.8", "q/3", 25::ms, 25::ms),
+                new Note("7|o1|a0.65", "q/6", 25::ms, 25::ms),
+                new Note("8|o1|a0.65", "q/6", 25::ms, 25::ms),
+                new Note("7|o1|a0.7", "q/3", 25::ms, 25::ms),
             ],
             4
         );
@@ -40,13 +41,9 @@ class Scene2 extends Scene {
 
 public class Etune2Voice2Score extends Score {
     fun @construct() {
-        1 => this.voiceNum;
+        2 => this.voiceNum;
 
-        // Load scenes
-        Scene1 scene1();
-        Scene2 scene2();
-
-        this.scenes << scene1;
-        this.scenes << scene2;
+        this.scenes << new Scene1();
+        // this.scenes << new Scene2();
     }
 }

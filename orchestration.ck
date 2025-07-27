@@ -4,7 +4,7 @@
 
 // Imports
 @import "clock.ck"
-@import {"etune2/metadata.ck", "etune2/voice1score.ck", "etune2/voice2score.ck"}
+@import {"etune2/metadata.ck", "etune2/voice1score.ck", "etune2/voice2score.ck", "etune2/voice3score.ck", "etune2/voice4score.ck"}
 @import "metadata.ck"
 @import "notation.ck"
 @import "tuning.ck"
@@ -77,11 +77,10 @@ public class Orchestrator {
         if (opusIdx == 1) {
 
         } else if (opusIdx == 2) {
-            Etune2Voice1Score voice1Score();
-            Etune2Voice2Score voice2Score();
-
-            voiceScores << voice1Score;
-            voiceScores << voice2Score;
+            voiceScores << new Etune2Voice1Score();
+            voiceScores << new Etune2Voice2Score();
+            voiceScores << new Etune2Voice3Score();
+            voiceScores << new Etune2Voice4Score();
         } else if (opusIdx == 3) {
 
         } else {
