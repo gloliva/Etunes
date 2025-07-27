@@ -17,6 +17,9 @@ public class Orchestrator {
     Step gateCV[];
     Envelope voiceEnv[];
 
+    // Opus metadata
+    ScoreMetadata @ metadata;
+
     // Run state
     int voiceDone[];
 
@@ -37,11 +40,13 @@ public class Orchestrator {
         return metadata;
     }
 
-    fun @construct(int numVoices) {
-        Step voicePitchCV[numVoices];
-        Step gateCV[numVoices];
-        Envelope voiceEnv[numVoices];
-        int voiceDone[numVoices];
+    fun @construct(ScoreMetadata metadata) {
+        metadata @=> this.metadata;
+
+        Step voicePitchCV[this.metadata.numVoices];
+        Step gateCV[this.metadata.numVoices];
+        Envelope voiceEnv[this.metadata.numVoices];
+        int voiceDone[this.metadata.numVoices];
 
         // Assign lists to this instance
         voicePitchCV @=> this.voicePitchCV;
@@ -50,14 +55,14 @@ public class Orchestrator {
         voiceDone @=> this.voiceDone;
 
         // Initialize Step UGens and connect to DAC
-        for (int idx; idx < numVoices; idx++) {
+        for (int idx; idx < this.metadata.numVoices; idx++) {
             // Init Step Ugen
             0. => this.voicePitchCV[idx].next;
             1. => this.gateCV[idx].next;
 
             // Chain to DAC
             this.voicePitchCV[idx] => dac.chan(idx);
-            this.gateCV[idx] => this.voiceEnv[idx] => dac.chan(idx + numVoices);
+            this.gateCV[idx] => this.voiceEnv[idx] => dac.chan(idx + this.metadata.numVoices);
         }
     }
 
@@ -93,6 +98,13 @@ public class Orchestrator {
 
         // Initialize voices
         for (int voiceIdx; voiceIdx < this.voicePitchCV.size(); voiceIdx++) {
+            // Check if voice is disabled
+            if (this.metadata.voiceExcluded(voiceIdx + 1)) {
+                chout <= "Skipping voice " <= voiceIdx + 1 <= "..." <= IO.nl();
+                1 => this.voiceDone[voiceIdx];
+                continue;
+            }
+
             Voice voice(voiceIdx, this.voicePitchCV[voiceIdx], this.voiceEnv[voiceIdx]);
 
             // Sync voice to main clock

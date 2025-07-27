@@ -29,7 +29,7 @@ clock.connectToDac(14, 15);
 
 
 // Orchestration
-Orchestrator orchestrator(metadata.numVoices);
+Orchestrator orchestrator(metadata);
 
 
 // Run
