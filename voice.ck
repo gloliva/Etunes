@@ -13,6 +13,7 @@ public class Voice {
     // Pitch Handling
     Step @ voicePitchCV;
     -1 => int voiceIdx;
+    -1 => int voiceNum;
 
     // Amp envelope
     Envelope @ voiceEnv;
@@ -31,6 +32,7 @@ public class Voice {
 
     fun @construct(int voiceIdx, Step voicePitchCV, Envelope voiceEnv) {
         voiceIdx => this.voiceIdx;
+        voiceIdx + 1 => this.voiceNum;
         voicePitchCV @=> this.voicePitchCV;
         voiceEnv @=> this.voiceEnv;
     }
@@ -52,8 +54,8 @@ public class Voice {
     }
 
     fun void play() {
-        if (this.clock == null || this.tuning == null || this.scenes == null) {
-            cherr <= "ERROR: Need to set clock, tuning, and scenes for Voice Num: " <= this.voiceIdx + 1 <= IO.nl();
+        if (this.clock == null || this.scenes == null) {
+            cherr <= "ERROR: Need to set clock and scenes for Voice Num: " <= this.voiceNum <= IO.nl();
             cherr <= "Terminating early." <= IO.nl();
             return;
         }
@@ -66,8 +68,21 @@ public class Voice {
                 continue;
             }
 
-            chout <= "Playing Voice " <= this.voiceIdx + 1 <= " Scene " <= sceneIdx + 1 <= IO.nl();
+            chout <= "Playing Voice " <= this.voiceNum <= " Scene " <= sceneIdx + 1 <= IO.nl();
             this.scenes[sceneIdx] @=> Scene activeScene;
+
+            // Set tuning
+            if (this.metadata.hasTuning(this.voiceNum, sceneIdx + 1)) {
+                this.metadata.getTuning(this.voiceNum, sceneIdx + 1) @=> Tuning activeTuning;
+                chout <= "    Changing tuning to " <= activeTuning.name <= IO.nl();
+                this.setTuning(activeTuning);
+            }
+
+            if (this.tuning == null) {
+                cherr <= "ERROR: Need to set Tuning for Voice Num: " <= this.voiceNum <= IO.nl();
+                cherr <= "Terminating early." <= IO.nl();
+                return;
+            }
 
             // Loop through sequences
             for (Sequence activeSequence : activeScene.seqs) {

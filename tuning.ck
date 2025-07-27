@@ -4,9 +4,11 @@
 
 public class Tuning {
     float octaveVolt;
+    string name;
 
     fun @construct() {
         0.1 => this.octaveVolt;
+        "Default Tuning" => this.name;
     }
 
     fun float cv(int degree) {
@@ -28,6 +30,7 @@ public class EDO extends Tuning {
         Tuning();
         divisions => this.divisions;
         this.octaveVolt / divisions => cvStep;
+        "EDO " + Std.itoa(this.divisions) => this.name;
     }
 
     fun float cv(int degree, int octaveDiff) {
