@@ -110,6 +110,9 @@ public class Orchestrator {
             // Sync voice to main clock
             voice.setClock(clock);
 
+            // Set metadata
+            voice.setScoreMetadata(metadata);
+
             // Set voice scenes
             voiceScores[voiceIdx] @=> Score activeScore;
             voice.setScenes(activeScore.scenes);

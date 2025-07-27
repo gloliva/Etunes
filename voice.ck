@@ -4,6 +4,7 @@
 
 // Imports
 @import "clock.ck"
+@import "metadata.ck"
 @import "notation.ck"
 @import "tuning.ck"
 
@@ -19,6 +20,9 @@ public class Voice {
     // Tempo sync
     Clock @ clock;
 
+    // Score metadata
+    ScoreMetadata @ metadata;
+
     // Tuning
     Tuning @ tuning;
 
@@ -33,6 +37,10 @@ public class Voice {
 
     fun void setClock(Clock clock) {
         clock @=> this.clock;
+    }
+
+    fun void setScoreMetadata(ScoreMetadata metadata) {
+        metadata @=> this.metadata;
     }
 
     fun void setTuning(Tuning tuning) {
@@ -52,7 +60,13 @@ public class Voice {
 
         // Loop through scenes
         for (int sceneIdx; sceneIdx < this.scenes.size(); sceneIdx++) {
-            chout <= "Voice " <= this.voiceIdx + 1 <= " Scene " <= sceneIdx <= IO.nl();
+            // Check if scene is excluded
+            if (this.metadata.sceneExcluded(sceneIdx + 1)) {
+                chout <= "Skipping scene " <= sceneIdx + 1 <= "..." <= IO.nl();
+                continue;
+            }
+
+            chout <= "Playing Voice " <= this.voiceIdx + 1 <= " Scene " <= sceneIdx + 1 <= IO.nl();
             this.scenes[sceneIdx] @=> Scene activeScene;
 
             // Loop through sequences
