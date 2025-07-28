@@ -66,7 +66,6 @@ class Scene1 extends Scene {
                 new Note("11|o-1|a0.7", "te", 25::ms, 75::ms),
                 new Note("11|o-1|a0.65", "te", 25::ms, 75::ms),
                 new Note("11|o-1|a0.68", "te", 25::ms, 75::ms),
-
             ],
             4
         );
@@ -121,6 +120,13 @@ class Scene3 extends Scene {
                 new Note("11|o-1|a0.65", "e", 50::ms, 50::ms),
             ],
             1
+        );
+
+        // Add sequences to scene
+        this.setSeqs(
+            [
+                seq3,
+            ]
         );
     }
 }
