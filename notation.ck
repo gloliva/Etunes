@@ -80,6 +80,10 @@ public class Sequence {
     int size;
     float totalBeatValue;
 
+    fun @construct(Note notes[]) {
+        Sequence(notes, 1);
+    }
+
     fun @construct(Note notes[], int repeats) {
         notes @=> this.notes;
         repeats => this.repeats;

@@ -9,9 +9,10 @@ public class Etune2Metadata extends ScoreMetadata {
 
         // Exclusion lists
         [
-            2,
+            // 2,
             // 3,
-            4,
+            // 4,
+            5,
         ] @=> this.excludedVoices;
 
         // Set tunings
