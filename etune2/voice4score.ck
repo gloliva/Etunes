@@ -166,7 +166,48 @@ class Scene1 extends Scene {
 
 class Scene2 extends Scene {
     fun @construct() {
+        [
+            new Note("4|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("4|o-1|a0.60", "s", 25::ms, 75::ms),
+            new Note("4|o-1|a0.55", "s", 25::ms, 75::ms),
+            new Note("4|o-1|a0.60", "s", 25::ms, 75::ms),
+            new Note("4|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("4|o-1|a0.60", "s", 25::ms, 75::ms),
+            new Note("4|o-1|a0.55", "s", 25::ms, 75::ms),
+            new Note("4|o-1|a0.60", "s", 25::ms, 75::ms),
+            new Note("4|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("4|o-1|a0.60", "s", 25::ms, 75::ms),
+            new Note("4|o-1|a0.55", "s", 25::ms, 75::ms),
+            new Note("4|o-1|a0.60", "s", 25::ms, 75::ms),
+            new Note("4|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("4|o-1|a0.60", "s", 25::ms, 75::ms),
+            new Note("4|o-1|a0.55", "s", 25::ms, 75::ms),
+            new Note("4|o-1|a0.60", "s", 25::ms, 75::ms),
 
+            new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.60", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.55", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.60", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.60", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.55", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.60", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.60", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.55", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.60", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.60", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.55", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.60", "s", 25::ms, 75::ms),
+        ] @=> Note seq1A[];
+
+        // Add sequences to scene
+        this.setSeqs(
+            [
+                new Sequence(seq1A, 4),
+            ]
+        );
     }
 }
 
@@ -177,6 +218,6 @@ public class Etune2Voice4Score extends Score {
 
         // Load scenes
         this.scenes << new Scene1();
-        // this.scenes << new Scene2();
+        this.scenes << new Scene2();
     }
 }

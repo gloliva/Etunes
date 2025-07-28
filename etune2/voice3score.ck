@@ -63,6 +63,23 @@ class Scene1 extends Scene {
 }
 
 
+class Scene2 extends Scene {
+    fun @construct() {
+        [
+            new Note("4|o-1|a0.65", "w", 25::ms, 50::ms),
+            new Note("0|o-1|a0.65", "w", 25::ms, 50::ms),
+        ] @=> Note seq1A[];
+
+        // Add sequences to scene
+        this.setSeqs(
+            [
+                new Sequence(seq1A, 4),
+            ]
+        );
+    }
+}
+
+
 class Scene3 extends Scene {
     fun @construct() {
         Sequence seq3A(
@@ -114,6 +131,6 @@ public class Etune2Voice3Score extends Score {
 
         // Load scenes
         this.scenes << new Scene1();
-        // this.scenes << new Scene2();
+        this.scenes << new Scene2();
     }
 }
