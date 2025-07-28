@@ -123,7 +123,6 @@ class Scene1 extends Scene {
 
         [
             new RestNote("h."),
-            // new RestNote("e"),
             new Note("4|o1|a0.6", "e", 25::ms, 75::ms),
             new Note("1|o1|a0.6", "e", 25::ms, 75::ms),
         ] @=> Note seq3B[];
