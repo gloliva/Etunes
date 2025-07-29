@@ -244,6 +244,8 @@ class Scene3 extends Scene {
                 new Sequence(seq1B, 1),
                 new Sequence(seq1A, 3),
                 new Sequence(seq1B, 1),
+                new Sequence(seq1A, 3),
+                new Sequence(seq1B, 1),
             ]
         );
     }

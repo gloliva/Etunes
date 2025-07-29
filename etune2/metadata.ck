@@ -17,7 +17,7 @@ public class Etune2Metadata extends ScoreMetadata {
 
         // [
         //     1,
-        //     // 2,
+        //     2,
         //     // 3,
         //     // 4,
         // ] @=> this.excludedScenes;
