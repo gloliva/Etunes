@@ -17,17 +17,18 @@ public class Etune2Metadata extends ScoreMetadata {
 
         // [
         //     1,
+        //     // 2,
         //     // 3,
         //     // 4,
         // ] @=> this.excludedScenes;
 
         // Set tunings
         // Voice 1 and 2 -- EDO 22
-        this.setTuning(new EDO(22), 1, 1);
-        this.setTuning(new EDO(22), 2, 1);
+        this.setTuning(new EDO(22), 1, 0);
+        this.setTuning(new EDO(22), 2, 0);
 
         // Voice 3 and 4 -- EDO 7
-        this.setTuning(new EDO(7), 3, 1);
-        this.setTuning(new EDO(7), 4, 1);
+        this.setTuning(new EDO(7), 3, 0);
+        this.setTuning(new EDO(7), 4, 0);
     }
 }

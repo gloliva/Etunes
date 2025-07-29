@@ -94,7 +94,9 @@ class Scene2 extends Scene {
         [
             new Note("5|o1|a0.78", "e", 10::ms, 50::ms),
             new RestNote("e"),
-            new RestNote("h."),
+            new RestNote("h"),
+            new Note("5|o1|a0.68", "e", 10::ms, 75::ms),
+            new Note("5|o1|a0.68", "e", 10::ms, 75::ms),
 
             new RestNote("h"),
 
@@ -155,43 +157,39 @@ class Scene2 extends Scene {
 
 class Scene3 extends Scene {
     fun @construct() {
-        Sequence seq3A(
-            [
-                new Note("5|o-1|a0.7", "q", 25::ms, 75::ms),
-                new Note("6|o-1|a0.65", "s", 25::ms, 75::ms),
-                new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
+        [
+            new Note("5|o-1|a0.7", "q", 25::ms, 75::ms),
+            new Note("6|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
 
-                new Note("5|o-1|a0.7", "q", 25::ms, 75::ms),
-                new Note("6|o-1|a0.65", "s", 25::ms, 75::ms),
-                new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("5|o-1|a0.7", "q", 25::ms, 75::ms),
+            new Note("6|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
 
-                new Note("6|o-1|a0.7", "e", 25::ms, 75::ms),
-                new Note("5|o-1|a0.65", "e", 25::ms, 75::ms),
-            ],
-            3
-        );
+            new Note("6|o-1|a0.7", "e", 25::ms, 75::ms),
+            new Note("5|o-1|a0.65", "e", 25::ms, 75::ms),
+        ] @=> Note seq1A[];
 
-        Sequence seq3B(
-            [
-                new Note("5|o-1|a0.7", "q", 25::ms, 75::ms),
-                new Note("3|o-1|a0.65", "s", 25::ms, 75::ms),
-                new Note("5|o-1|a0.65", "s", 25::ms, 75::ms),
+        [
+            new Note("5|o-1|a0.7", "q", 25::ms, 75::ms),
+            new Note("3|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("5|o-1|a0.65", "s", 25::ms, 75::ms),
 
-                new Note("5|o-1|a0.7", "q", 25::ms, 75::ms),
-                new Note("3|o-1|a0.65", "s", 25::ms, 75::ms),
-                new Note("5|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("5|o-1|a0.7", "q", 25::ms, 75::ms),
+            new Note("3|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("5|o-1|a0.65", "s", 25::ms, 75::ms),
 
-                new Note("6|o-1|a0.7", "e", 25::ms, 75::ms),
-                new Note("5|o-1|a0.65", "e", 25::ms, 75::ms),
-            ],
-            1
-        );
+            new Note("1|o-1|a0.7", "e", 25::ms, 75::ms),
+            new Note("5|o-1|a0.65", "e", 25::ms, 75::ms),
+        ] @=> Note seq1B[];
 
         // Add sequences to scene
         this.setSeqs(
             [
-                seq3A,
-                seq3B,
+                new Sequence(seq1A, 3),
+                new Sequence(seq1B, 1),
+                new Sequence(seq1A, 3),
+                new Sequence(seq1B, 1),
             ]
         );
     }
@@ -205,5 +203,6 @@ public class Etune2Voice3Score extends Score {
         // Load scenes
         this.scenes << new Scene1();
         this.scenes << new Scene2();
+        this.scenes << new Scene3();
     }
 }
