@@ -5,6 +5,19 @@
 class Scene1 extends Scene {
     fun @construct() {
         [
+            new Note("0|o-1|a0.4", "e", 25::ms, 75::ms),
+            new RestNote("e"),
+            new Note("0|o-1|a0.5", "e", 25::ms, 75::ms),
+            new RestNote("e"),
+
+            new Note("0|o-1|a0.6", "e", 25::ms, 75::ms),
+            new RestNote("e"),
+            new Note("0|o-1|a0.75", "e", 25::ms, 75::ms),
+            new Note("0|o-1|a0.8", "e", 25::ms, 75::ms),
+
+        ] @=> Note introSeq[];
+
+        [
             new Note("0|o-1|a0.8", "e", 25::ms, 75::ms),
             new RestNote("e"),
             new Note("13|o-1|a0.75", "e.", 25::ms, 0::ms),
@@ -62,6 +75,7 @@ class Scene1 extends Scene {
         // Add sequences to scene
         this.setSeqs(
             [
+                new Sequence(introSeq, 1),
                 new Sequence(seq1A, 6),
                 new Sequence(seq1B, 2),
                 new Sequence(seq1A, 2),
