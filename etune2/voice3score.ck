@@ -12,8 +12,10 @@ class Scene1 extends Scene {
 
             new RestNote("e"),
             new Note("0|o-1|a0.7", "e", 25::ms, 75::ms),
-            new Note("0|o-1|a0.75", "e", 25::ms, 75::ms),
-            new Note("0|o-1|a0.8", "e", 25::ms, 75::ms),
+            new Note("0|o-1|a0.55", "s", 25::ms, 25::ms),
+            new Note("0|o-1|a0.65", "s", 25::ms, 25::ms),
+            new Note("0|o-1|a0.7", "s", 25::ms, 25::ms),
+            new Note("0|o-1|a0.75", "s", 25::ms, 25::ms),
 
         ] @=> Note introSeq[];
 
@@ -172,6 +174,10 @@ class Scene2 extends Scene {
 class Scene3 extends Scene {
     fun @construct() {
         [
+            new RestNote("w")
+        ] @=> Note restMeasure[];
+
+        [
             new Note("5|o-1|a0.7", "q", 25::ms, 75::ms),
             new Note("6|o-1|a0.65", "s", 25::ms, 75::ms),
             new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
@@ -197,6 +203,13 @@ class Scene3 extends Scene {
             new Note("5|o-1|a0.65", "e", 25::ms, 75::ms),
         ] @=> Note seq1B[];
 
+        [
+            new RestNote("h."),
+            new RestNote("e"),
+            new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
+        ] @=> Note seq2A[];
+
         // Add sequences to scene
         this.setSeqs(
             [
@@ -206,6 +219,8 @@ class Scene3 extends Scene {
                 new Sequence(seq1B, 1),
                 new Sequence(seq1A, 3),
                 new Sequence(seq1B, 1),
+                new Sequence(restMeasure, 3),
+                new Sequence(seq2A, 1),
             ]
         );
     }
