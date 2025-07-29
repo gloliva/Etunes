@@ -112,14 +112,17 @@ public class Orchestrator {
             // Set metadata
             voice.setScoreMetadata(metadata);
 
+            // Set default tuning
+            if (this.metadata.hasTuning(voice.voiceNum, 0)) {
+                this.metadata.getTuning(voice.voiceNum, 0) @=> Tuning defaultTuning;
+                chout <= "Changing tuning to " <= defaultTuning.name <= " for voice " <= voice.voiceNum <= IO.nl();
+                voice.setTuning(defaultTuning);
+            }
+
             // Set voice scenes
             voiceScores[voiceIdx] @=> Score activeScore;
             voice.setScenes(activeScore.scenes);
             activeScore.printDur(clock);
-
-            // TODO: remove this when done testing
-            EDO edo12(12);
-            voice.setTuning(edo12);
 
             // Run voice
             spork ~ this.playVoice(voice);
