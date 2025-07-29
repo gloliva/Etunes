@@ -135,6 +135,15 @@ class Scene2 extends Scene {
         ] @=> Note seq2B[];
 
         [
+            new Note("19|o1|a0.65", "s/2", 10::ms, 5::ms),
+            new Note("19|o1|a0.6", "s/2", 10::ms, 5::ms),
+            new Note("19|o1|a0.55", "s/2", 10::ms, 0::ms),
+            new Note("13|o1|a0.65", "s/2", 0::ms, 5::ms),
+            new RestNote("s"),
+            new Note("17|o1|a0.75", "s", 10::ms, 50::ms),
+        ] @=> Note seq2E[];
+
+        [
             new RestNote("w"),
             new RestNote("h."),
             new Note("17|o1|a0.3", "s/2", 10::ms, 5::ms),
@@ -199,9 +208,12 @@ class Scene2 extends Scene {
         this.setSeqs(
             [
                 new Sequence(seq1A, 6),
-                new Sequence(seq2A, 12),
+                new Sequence(seq2A, 8),
                 new Sequence(seq2B, 4),
-                new Sequence(seq2A, 16),
+                new Sequence(seq2E, 4),
+                new Sequence(seq2A, 8),
+                new Sequence(seq2B, 4),
+                new Sequence(seq2E, 4),
                 new Sequence(seq2C, 1),
                 new Sequence(seq2D, 1),
                 new Sequence(seq3A, 12),

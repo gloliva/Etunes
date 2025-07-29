@@ -7,21 +7,6 @@ public class Etune2Metadata extends ScoreMetadata {
         4 => this.numVoices;
         90. => this.tempo;
 
-        // // Exclusion lists
-        // [
-        //     // 2,
-        //     // 3,
-        //     // 4,
-        //     5,
-        // ] @=> this.excludedVoices;
-
-        // [
-        //     1,
-        //     2,
-        //     // 3,
-        //     // 4,
-        // ] @=> this.excludedScenes;
-
         // Set tunings
         // Voice 1 and 2 -- EDO 22
         this.setTuning(new EDO(22), 1, 0);
