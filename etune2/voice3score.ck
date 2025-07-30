@@ -88,10 +88,10 @@ class Scene2 extends Scene {
 
         [
             new Note("6|o1|a0.7", "s", 10::ms, 10::ms),
-            new Note("6|o1|a0.75", "s/2", 10::ms, 5::ms),
-            new Note("5|o1|a0.75", "s/2", 10::ms, 5::ms),
+            new Note("6|o1|a0.65", "s/2", 10::ms, 5::ms),
+            new Note("5|o1|a0.68", "s/2", 10::ms, 5::ms),
             new RestNote("s"),
-            new Note("6|o1|a0.75", "s", 10::ms, 50::ms),
+            new Note("6|o1|a0.68", "s", 10::ms, 50::ms),
         ] @=> Note seq2A[];
 
         [
