@@ -1,10 +1,13 @@
 // Imports
+@import "notation.ck"
 @import "tuning.ck"
 
 
 public class ScoreMetadata {
     int numVoices;
     float tempo;
+
+    Score voiceScores[0];
 
     Tuning tuningSceneMap[0];
 

@@ -4,7 +4,7 @@
 
 // Imports
 @import "clock.ck"
-@import {"etune2/metadata.ck", "etune2/voice1score.ck", "etune2/voice2score.ck", "etune2/voice3score.ck", "etune2/voice4score.ck"}
+@import "etune2/metadata.ck"
 @import "metadata.ck"
 @import "notation.ck"
 @import "tuning.ck"
@@ -71,30 +71,7 @@ public class Orchestrator {
         1 => this.voiceDone[voice.voiceIdx];
     }
 
-    fun Score[] getVoiceScores(int opusIdx) {
-        Score voiceScores[0];
-
-        if (opusIdx == 1) {
-
-        } else if (opusIdx == 2) {
-            voiceScores << new Etune2Voice1Score();
-            voiceScores << new Etune2Voice2Score();
-            voiceScores << new Etune2Voice3Score();
-            voiceScores << new Etune2Voice4Score();
-        } else if (opusIdx == 3) {
-
-        } else {
-            cherr <= "ERROR: Invalid Opus number: " <= opusIdx <= IO.nl();
-            me.exit();
-        }
-
-        return voiceScores;
-    }
-
     fun void run(int opusIdx, Clock clock) {
-        // Get scores based on opus number
-        this.getVoiceScores(opusIdx) @=> Score voiceScores[];
-
         // Initialize voices
         for (int voiceIdx; voiceIdx < this.voicePitchCV.size(); voiceIdx++) {
             // Check if voice is disabled
@@ -120,9 +97,9 @@ public class Orchestrator {
             }
 
             // Set voice scenes
-            voiceScores[voiceIdx] @=> Score activeScore;
-            voice.setScenes(activeScore.scenes);
-            activeScore.printDur(clock);
+            this.metadata.voiceScores[voiceIdx] @=> Score voiceScore;
+            voice.setScenes(voiceScore.scenes);
+            voiceScore.printDur(clock);
 
             // Run voice
             spork ~ this.playVoice(voice);
