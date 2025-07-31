@@ -3,3 +3,6 @@ audio/
 
 # Screenshots and images
 images/
+
+# Mac OS stuff
+.DS_Store
