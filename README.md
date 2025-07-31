@@ -1,6 +1,6 @@
 # Étunes - Experiments in Modular Tuning
 
-## How to Run
+## Overview
 
 ### Prereqs
 
