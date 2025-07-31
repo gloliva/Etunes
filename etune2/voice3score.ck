@@ -204,11 +204,62 @@ class Scene3 extends Scene {
         ] @=> Note seq1B[];
 
         [
+            new Note("3|o-1|a0.7", "q", 25::ms, 75::ms),
+            new Note("1|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
+
+            new Note("3|o-1|a0.7", "q", 25::ms, 75::ms),
+            new Note("1|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
+
+            new Note("1|o-1|a0.7", "e", 25::ms, 75::ms),
+            new Note("3|o-1|a0.65", "e", 25::ms, 75::ms),
+        ] @=> Note seq2A[];
+
+        [
+            new Note("0|o-1|a0.7", "q", 25::ms, 75::ms),
+            new Note("1|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("6|o-2|a0.65", "s", 25::ms, 75::ms),
+
+            new Note("0|o-1|a0.7", "q", 25::ms, 75::ms),
+            new Note("1|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("6|o-2|a0.65", "s", 25::ms, 75::ms),
+
+            new Note("1|o-1|a0.7", "e", 25::ms, 75::ms),
+            new Note("0|o-1|a0.65", "e", 25::ms, 75::ms),
+        ] @=> Note seq2B[];
+
+        [
+            new Note("6|o-2|a0.7", "q", 25::ms, 75::ms),
+            new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("4|o-2|a0.65", "s", 25::ms, 75::ms),
+
+            new Note("6|o-2|a0.7", "q", 25::ms, 75::ms),
+            new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("4|o-2|a0.65", "s", 25::ms, 75::ms),
+
+            new RestNote("q"),
+        ] @=> Note seq2C[];
+
+        [
+            new Note("6|o-2|a0.7", "q", 25::ms, 75::ms),
+            new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("4|o-2|a0.65", "s", 25::ms, 75::ms),
+
+            new Note("6|o-2|a0.7", "q", 25::ms, 75::ms),
+            new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
+            new Note("4|o-2|a0.65", "s", 25::ms, 75::ms),
+
+            new Note("0|o-1|a0.65", "e", 25::ms, 75::ms),
+            new Note("3|o-1|a0.65", "e", 25::ms, 75::ms),
+        ] @=> Note seq2D[];
+
+        [
             new RestNote("h."),
             new RestNote("e"),
             new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
             new Note("0|o-1|a0.65", "s", 25::ms, 75::ms),
-        ] @=> Note seq2A[];
+        ] @=> Note seq3A[];
 
         // Add sequences to scene
         this.setSeqs(
@@ -219,8 +270,18 @@ class Scene3 extends Scene {
                 new Sequence(seq1B, 1),
                 new Sequence(seq1A, 3),
                 new Sequence(seq1B, 1),
+
+                new Sequence(seq2A, 4),
+                new Sequence(seq2B, 2),
+                new Sequence(seq2A, 2),
+                new Sequence(seq2C, 3),
+                new Sequence(seq2D, 1),
+
+                new Sequence(seq1A, 3),
+                new Sequence(seq1B, 1),
+
                 new Sequence(restMeasure, 3),
-                new Sequence(seq2A, 1),
+                new Sequence(seq3A, 1),
             ]
         );
     }
