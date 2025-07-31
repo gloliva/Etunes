@@ -172,23 +172,23 @@ class Scene2 extends Scene {
         ] @=> Note seq3A[];
 
         [
-            new Note("19|o2|a0.65", "s", 25::ms, 25::ms),
-            new Note("21|o2|a0.6", "s", 25::ms, 25::ms),
+            new Note("19|o2|a0.7", "s", 25::ms, 25::ms),
+            new Note("21|o2|a0.65", "s", 25::ms, 25::ms),
             new Note("13|o2|a0.7", "s", 25::ms, 25::ms),
             new Note("17|o2|a0.65", "s", 25::ms, 25::ms),
 
-            new Note("19|o2|a0.6", "s", 25::ms, 25::ms),
-            new Note("20|o2|a0.6", "s", 25::ms, 25::ms),
+            new Note("19|o2|a0.7", "s", 25::ms, 25::ms),
+            new Note("20|o2|a0.75", "s", 25::ms, 25::ms),
             new Note("13|o2|a0.7", "s", 25::ms, 25::ms),
             new Note("17|o2|a0.65", "s", 25::ms, 25::ms),
 
-            new Note("19|o2|a0.65", "s", 25::ms, 25::ms),
+            new Note("19|o2|a0.7", "s", 25::ms, 25::ms),
             new Note("20|o2|a0.65", "s", 25::ms, 25::ms),
-            new Note("13|o2|a0.65", "s", 25::ms, 25::ms),
-            new Note("16|o2|a0.6", "s", 25::ms, 25::ms),
+            new Note("13|o2|a0.7", "s", 25::ms, 25::ms),
+            new Note("16|o2|a0.7", "s", 25::ms, 25::ms),
 
             new Note("18|o2|a0.65", "s", 25::ms, 25::ms),
-            new Note("20|o2|a0.6", "s", 25::ms, 25::ms),
+            new Note("20|o2|a0.7", "s", 25::ms, 25::ms),
             new Note("13|o2|a0.65", "s", 25::ms, 25::ms),
             new Note("16|o2|a0.6", "s", 25::ms, 25::ms),
 
