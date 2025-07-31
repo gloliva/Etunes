@@ -256,8 +256,7 @@ class Scene2 extends Scene {
 
             new Note("1|o2|a0.6", "s", 25::ms, 0::ms),
             new Note("4|o2|a0.65", "s", 25::ms, 50::ms),
-            new Note("3|o2|a0.65", "s", 25::ms, 50::ms),
-            new Note("5|o2|a0.65", "s", 25::ms, 50::ms),
+            new Note("5|o2|a0.65", "e", 25::ms, 15::ms),
         ] @=> Note seq3D[];
 
         // Add sequences to scene
