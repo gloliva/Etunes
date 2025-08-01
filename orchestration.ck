@@ -3,8 +3,8 @@
 */
 
 // Imports
+@import {"etune1/metadata.ck" , "etune2/metadata.ck"}
 @import "clock.ck"
-@import "etune2/metadata.ck"
 @import "metadata.ck"
 @import "notation.ck"
 @import "tuning.ck"
@@ -27,7 +27,7 @@ public class Orchestrator {
         ScoreMetadata @ metadata;
 
         if (opusIdx == 1) {
-
+            new Etune1Metadata() @=> metadata;
         } else if (opusIdx == 2) {
             new Etune2Metadata() @=> metadata;
         } else if (opusIdx == 3) {

@@ -8,7 +8,7 @@
 
 public class Note {
     // Note and amplitude
-    int degree;
+    float degree;
     int octaveDiff;
     float amp;
 
@@ -30,7 +30,7 @@ public class Note {
         StringTokenizer strtok;
         strtok.set(noteInfo);
 
-        0 => int degree;
+        0. => float degree;
         0 => int octaveDiff;
         0.5 => float amp;
 
@@ -47,7 +47,7 @@ public class Note {
 
             // Else pitch info
             } else {
-                token.toInt() => degree;
+                token.toFloat() => degree;
             }
         }
 

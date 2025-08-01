@@ -15,7 +15,7 @@ public class Tuning {
         return this.cv(degree, 0);
     }
 
-    fun float cv(int degree, int octaveDiff) {
+    fun float cv(float degree, int octaveDiff) {
         cherr <= "ERROR: Override this function based on Child Tuning." <= IO.nl();
         return -1;
     }
@@ -33,7 +33,7 @@ public class EDO extends Tuning {
         "EDO " + Std.itoa(this.divisions) => this.name;
     }
 
-    fun float cv(int degree, int octaveDiff) {
+    fun float cv(float degree, int octaveDiff) {
         return ( octaveDiff * this.octaveVolt ) + ( degree * cvStep );
     }
 }
