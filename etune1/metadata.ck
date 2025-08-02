@@ -1,7 +1,7 @@
 @import "../metadata.ck"
 @import "../tuning.ck"
 // @import {"./voice1score.ck", "./voice2score.ck", "./voice3score.ck", "./voice4score.ck"}
-@import {"./voice1score.ck", "./voice2score.ck"}
+@import {"./voice1score.ck", "./voice2score.ck", "./voice3score.ck"}
 
 
 public class Etune1Metadata extends ScoreMetadata {
@@ -12,18 +12,20 @@ public class Etune1Metadata extends ScoreMetadata {
         [
             // 1,
             // 2,
-            3,
+            // 3,
             4,
         ] @=> this.excludedVoices;
 
         [
             -1,
+            // 1,
+            // 2,
         ] @=> this.excludedScenes;
 
         // Set voice scores
         this.voiceScores << new Etune1Voice1Score();
         this.voiceScores << new Etune1Voice2Score();
-        // this.voiceScores << new Etune1Voice3Score();
+        this.voiceScores << new Etune1Voice3Score();
         // this.voiceScores << new Etune1Voice4Score();
 
         // Set tunings
