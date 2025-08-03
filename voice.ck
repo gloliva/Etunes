@@ -94,8 +94,7 @@ public class Voice {
                         nextPitchCV => this.voicePitchCV.next;
 
                         // Trigger Note
-                        spork ~ this.triggerEnv(note);
-                        clock.quarterNote * note.beatValue => now;
+                        this.triggerEnv(note);
                     }
                 }
             }
@@ -108,7 +107,7 @@ public class Voice {
         note.attack => now;
 
         // Sustain
-        (clock.quarterNote * note.beatValue) - note.attack - note.release => now;
+        (this.clock.quarterNote * note.beatValue) - note.attack - note.release => now;
 
         // Ramp down
         this.voiceEnv.ramp(note.release, 0.);
