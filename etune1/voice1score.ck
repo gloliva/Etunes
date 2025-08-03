@@ -186,8 +186,6 @@ class Scene2 extends Scene {
             new Note("5.4|o-1|a0.33", "s/2", 15::ms, 5::ms),
         ] @=> Note seq2G[];
 
-
-
         // Add sequences to scene
         this.setSeqs(
             [
@@ -210,6 +208,37 @@ class Scene2 extends Scene {
 
 
 class Scene3 extends Scene {
+    fun @construct() {
+        [
+            new RestNote("w"),
+        ] @=> Note restMeasure[];
+
+        [
+            new Note("9.|o-1|a0.25", "w", 300::ms, 150::ms),
+        ] @=> Note seq1A[];
+
+        [
+            new Note("7.2|o-1|a0.26", "w", 300::ms, 150::ms),
+        ] @=> Note seq1B[];
+
+        // Add sequences to scene
+        this.setSeqs(
+            [
+                new Sequence(seq1A, 1),
+                new Sequence(restMeasure, 1),
+                new Sequence(seq1A, 1),
+                new Sequence(restMeasure, 1),
+                new Sequence(seq1A, 1),
+                new Sequence(restMeasure, 1),
+                new Sequence(seq1B, 1),
+                new Sequence(restMeasure, 1),
+            ]
+        );
+    }
+}
+
+
+class Scene4 extends Scene {
     fun @construct() {
 
         [
@@ -298,10 +327,10 @@ class Scene3 extends Scene {
         ] @=> Note seq2B[];
 
         [
-            new Note("1.2|o0|a0.70", "s", 25::ms, 25::ms),
-            new Note("1.2|o0|a0.55", "s", 25::ms, 25::ms),
-            new Note("1.2|o0|a0.65", "s", 25::ms, 25::ms),
-            new Note("1.2|o0|a0.45", "s", 25::ms, 25::ms),
+            new Note("1.27|o0|a0.70", "s", 25::ms, 25::ms),
+            new Note("1.27|o0|a0.55", "s", 25::ms, 25::ms),
+            new Note("1.27|o0|a0.65", "s", 25::ms, 25::ms),
+            new Note("1.27|o0|a0.45", "s", 25::ms, 25::ms),
         ] @=> Note seq2C[];
 
         [
@@ -336,10 +365,11 @@ class Scene3 extends Scene {
                 new Sequence(seq2A, 8),
                 new Sequence(seq2C, 8),
                 new Sequence(seq2A, 8),
-                new Sequence(seq2B, 16),
-                new Sequence(seq2C, 16),
-                new Sequence(seq2D, 16),
-                new Sequence(seq2E, 16),
+
+                new Sequence(seq2B, 8),
+                new Sequence(seq2C, 8),
+                new Sequence(seq2D, 8),
+                new Sequence(seq2E, 8),
             ]
         );
     }
@@ -354,5 +384,6 @@ public class Etune1Voice1Score extends Score {
         this.scenes << new Scene1();
         this.scenes << new Scene2();
         this.scenes << new Scene3();
+        this.scenes << new Scene4();
     }
 }

@@ -20,6 +20,8 @@ public class Etune1Metadata extends ScoreMetadata {
             -1,
             // 1,
             // 2,
+            // 3,
+            // 4,
         ] @=> this.excludedScenes;
 
         // Set voice scores
