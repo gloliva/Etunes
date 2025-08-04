@@ -246,32 +246,63 @@ class Scene3 extends Scene {
             new Note("0.6|o1|a0.2", "e/3", 25::ms, 25::ms),
         ] @=> Note seq2A[];
 
-        // [
-        //     new Note("9.|o1|a0.7", "s", 50::ms, 50::ms),
-        //     new Note("9.2|o1|a0.65", "s", 50::ms, 50::ms),
-        //     new RestNote("e"),
+        [
+            new Note("0.4|o1|a0.15", "e/3", 25::ms, 25::ms),
+            new Note("0.1|o1|a0.1", "e/3", 25::ms, 25::ms),
+            new RestNote("e/3"),
+            new Note("11.4|o0|a0.2", "e/3", 25::ms, 25::ms),
+            new RestNote("e/3"),
+            new Note("11.5|o0|a0.1", "e/3", 25::ms, 25::ms),
 
-        //     new Note("9.0|o1|a0.68", "e.", 150::ms, 50::ms),
-        //     new RestNote("s"),
+            new Note("11.8|o0|a0.15", "e/3", 25::ms, 25::ms),
+            new RestNote("e/3"),
+            new Note("0.3|o1|a0.15", "e/3", 25::ms, 25::ms),
+            new Note("0.7|o1|a0.1", "e/3", 25::ms, 25::ms),
+            new Note("0.9|o1|a0.15", "e/3", 25::ms, 25::ms),
+            new RestNote("e/3"),
+        ] @=> Note seq2B[];
 
-        //     new RestNote("s"),
-        //     new Note("8.7|o1|a0.75", "s", 50::ms, 50::ms),
-        //     new Note("9.1|o1|a0.75", "s", 50::ms, 50::ms),
-        //     new RestNote("s"),
+        [
+            new RestNote("e/3"),
+            new Note("0.1|o1|a0.1", "e/3", 25::ms, 25::ms),
+            new Note("11.4|o0|a0.2", "e/3", 25::ms, 25::ms),
+            new RestNote("e/3"),
+            new RestNote("e/3"),
+            new Note("11.5|o0|a0.1", "e/3", 25::ms, 25::ms),
 
-        //     new Note("9.2|o1|a0.7", "s", 50::ms, 50::ms),
-        //     new Note("9.0|o1|a0.68", "e.", 150::ms, 50::ms),
-        // ] @=> Note seq1A[];
+            new RestNote("e/3"),
+            new RestNote("e/3"),
+            new Note("11.8|o0|a0.15", "e/3", 25::ms, 25::ms),
+            new Note("0.7|o1|a0.1", "e/3", 25::ms, 25::ms),
+            new Note("0.9|o1|a0.15", "e/3", 25::ms, 25::ms),
+            new RestNote("e/3"),
+        ] @=> Note seq2C[];
+
+        [
+            new RestNote("e/3"),
+            new RestNote("e/3"),
+            new Note("0.1|o1|a0.1", "e/3", 25::ms, 25::ms),
+            new RestNote("e/3"),
+            new RestNote("e/3"),
+            new Note("11.5|o0|a0.1", "e/3", 25::ms, 25::ms),
+
+            new Note("11.8|o0|a0.15", "e/3", 25::ms, 25::ms),
+            new RestNote("e/3"),
+            new RestNote("e/3"),
+            new Note("0.7|o1|a0.1", "e/3", 25::ms, 25::ms),
+            new RestNote("e/3"),
+            new RestNote("e/3"),
+        ] @=> Note seq2D[];
 
         // Add sequences to scene
         this.setSeqs(
             [
                 new Sequence(seq1A, 1),
                 new Sequence(seq2A, 1),
-                new Sequence(seq2A, 30),
-                // new Sequence(seq1A, 2),
-                // new Sequence(restMeasure, 1),
-                // new Sequence(seq1A, 1),
+                new Sequence(seq2A, 22),
+                new Sequence(seq2B, 4),
+                new Sequence(seq2C, 2),
+                new Sequence(seq2D, 2),
             ]
         );
     }

@@ -218,24 +218,50 @@ class Scene3 extends Scene {
         ] @=> Note restMeasure[];
 
         [
-            new Note("9.|o-1|a0.2", "w", 500::ms, 0::ms),
+            new Note("9.|o-1|a0.2", "w", 50::ms, 0::ms),
             new Note("9.|o-1|a0.2", "w", 0::ms, 700::ms),
             new Note("7.2|o-1|a0.17", "w", 500::ms, 0::ms),
             new Note("7.2|o-1|a0.17", "w", 0::ms, 700::ms),
         ] @=> Note seq1A[];
 
         [
+            new Note("9.|o-1|a0.2", "w", 500::ms, 0::ms),
+            new Note("9.|o-1|a0.2", "w", 0::ms, 700::ms),
+            new Note("7.2|o-1|a0.17", "w", 500::ms, 0::ms),
+            new Note("7.2|o-1|a0.17", "w", 0::ms, 700::ms),
+        ] @=> Note seq1B[];
+
+        [
             new Note("5.3|o-1|a0.15", "w", 500::ms, 0::ms),
             new Note("5.3|o-1|a0.15", "w", 0::ms, 700::ms),
             new Note("7.5|o-1|a0.11", "w", 500::ms, 0::ms),
             new Note("7.5|o-1|a0.11", "w", 0::ms, 700::ms),
-        ] @=> Note seq1B[];
+        ] @=> Note seq1C[];
+
+        [
+            new Note("9.|o-1|a0.6", "w", 500::ms, 0::ms),
+            new Note("9.|o-1|a0.58", "w", 0::ms, 800::ms),
+            new Note("7.2|o-1|a0.6", "w", 500::ms, 0::ms),
+            new Note("7.2|o-1|a0.58", "w", 0::ms, 700::ms),
+        ] @=> Note seq2A[];
+
+        [
+            new Note("5.3|o-1|a0.6", "w", 500::ms, 0::ms),
+            new Note("5.3|o-1|a0.56", "w", 0::ms, 800::ms),
+            new Note("7.5|o-1|a0.6", "w", 500::ms, 0::ms),
+            new Note("7.5|o-1|a0.55", "w", 0::ms, 700::ms),
+        ] @=> Note seq2B[];
 
         // Add sequences to scene
         this.setSeqs(
             [
-                new Sequence(seq1A, 3),
-                new Sequence(seq1B, 1),
+                new Sequence(seq1A, 1),
+                new Sequence(seq1B, 2),
+                new Sequence(seq1C, 1),
+                new Sequence(seq2A, 1),
+                new Sequence(seq2B, 1),
+                new Sequence(seq2A, 1),
+                new Sequence(seq2B, 1),
             ]
         );
     }

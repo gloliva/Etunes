@@ -21,7 +21,7 @@ public class Etune1Metadata extends ScoreMetadata {
             1,
             2,
             // 3,
-            // 4,
+            4,
         ] @=> this.excludedScenes;
 
         // Set voice scores
@@ -31,7 +31,7 @@ public class Etune1Metadata extends ScoreMetadata {
         // this.voiceScores << new Etune1Voice4Score();
 
         // Set tempo changes
-        this.setTempoChange(90., 3);
+        this.setTempoChange(82., 3);
         this.setTempoChange(110., 4);
 
         // Set tunings
