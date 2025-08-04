@@ -71,6 +71,13 @@ public class Voice {
             chout <= "Playing Voice " <= this.voiceNum <= " Scene " <= sceneIdx + 1 <= IO.nl();
             this.scenes[sceneIdx] @=> Scene activeScene;
 
+            // Set tempo
+            if (this.metadata.hasTempoChange(sceneIdx + 1)) {
+                this.metadata.getTempoChange(sceneIdx + 1) => float newTempo;
+                chout <= "    Changing Tempo to " <= newTempo <= IO.nl();
+                this.clock.setTempo(newTempo);
+            }
+
             // Set tuning
             if (this.metadata.hasTuning(this.voiceNum, sceneIdx + 1)) {
                 this.metadata.getTuning(this.voiceNum, sceneIdx + 1) @=> Tuning activeTuning;

@@ -9,10 +9,23 @@ public class ScoreMetadata {
 
     Score voiceScores[0];
 
+    float tempoSceneMap[0];
     Tuning tuningSceneMap[0];
 
     int excludedVoices[0];
     int excludedScenes[0];
+
+    fun void setTempoChange(float tempo, int sceneNum) {
+        tempo => this.tempoSceneMap[Std.itoa(sceneNum)];
+    }
+
+    fun int hasTempoChange(int sceneNum) {
+        return this.tempoSceneMap.isInMap(Std.itoa(sceneNum));
+    }
+
+    fun float getTempoChange(int sceneNum) {
+        return this.tempoSceneMap[Std.itoa(sceneNum)];
+    }
 
     fun void setTuning(Tuning tuning, int voiceNum, int sceneNum) {
         Std.itoa(voiceNum) + Std.itoa(sceneNum) => string key;
