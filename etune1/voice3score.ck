@@ -303,6 +303,7 @@ class Scene3 extends Scene {
                 new Sequence(seq2B, 4),
                 new Sequence(seq2C, 2),
                 new Sequence(seq2D, 2),
+                new Sequence(restMeasure, 16),
             ]
         );
     }
