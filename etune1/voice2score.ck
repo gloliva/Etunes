@@ -447,8 +447,20 @@ class Scene3 extends Scene {
             new Note("11.1|o1|a0.7", "w", 0::ms, 0::ms),
             new Note("10.9|o1|a0.68", "w", 0::ms, 0::ms),
             new Note("9.2|o1|a0.7", "w", 0::ms, 0::ms),
-            new Note("8.9|o1|a0.68", "w", 0::ms, 500::ms),
+            new Note("8.9|o1|a0.68", "w", 0::ms, 0::ms),
         ] @=> Note seq5B[];
+
+        [
+            new Note("11|o1|a0.65", "w", 0::ms, 0::ms),
+            new Note("11|o1|a0.65", "w", 0::ms, 2200::ms),
+        ] @=> Note seq5C[];
+
+        [
+            new Note("11|o1|a0.42", "w", 1800::ms, 0::ms),
+            new Note("11.1|o1|a0.42", "w", 0::ms, 0::ms),
+            new Note("11.2|o1|a0.42", "w", 0::ms, 0::ms),
+            new Note("11.3|o1|a0.42", "w", 0::ms, 50::ms),
+        ] @=> Note seq6A[];
 
 
         // Add sequences to scene
@@ -467,8 +479,13 @@ class Scene3 extends Scene {
                 new Sequence(restMeasure, 2),
                 new Sequence(seq4A, 1),
                 new Sequence(seq4B, 1),
+
                 new Sequence(seq5A, 2),
                 new Sequence(seq5B, 1),
+                new Sequence(seq5C, 1),
+
+                new Sequence(restMeasure, 10),
+                new Sequence(seq6A, 1),
             ]
         );
     }
@@ -528,10 +545,10 @@ class Scene4 extends Scene {
         ] @=> Note seq1F[];
 
         [
-            new Note("0.2|o1|a0.65", "e", 25::ms, 25::ms),
-            new Note("0.12|o1|a0.45", "e", 25::ms, 25::ms),
-            new Note("2.89|o1|a0.65", "e", 25::ms, 25::ms),
-            new Note("3|o1|a0.55", "e", 25::ms, 25::ms),
+            new Note("0.2|o2|a0.65", "s", 25::ms, 25::ms),
+            new Note("3.1|o2|a0.45", "s", 25::ms, 25::ms),
+            new Note("1.8|o2|a0.65", "s", 25::ms, 25::ms),
+            new Note("3.1|o2|a0.55", "s", 25::ms, 25::ms),
         ] @=> Note seq2A[];
 
         // Add sequences to scene
@@ -551,6 +568,12 @@ class Scene4 extends Scene {
                 new Sequence(seq1E, 4),
                 new Sequence(seq1F, 2),
                 new Sequence(seq1E, 2),
+
+                new Sequence(seq2A, 16),
+                new Sequence(restMeasure, 2),
+                new Sequence(seq2A, 8),
+                new Sequence(restMeasure, 2),
+                new Sequence(seq2A, 8),
             ]
         );
     }
