@@ -171,19 +171,23 @@ class Scene2 extends Scene {
         ] @=> Note seq2F[];
 
         [
-            new Note("11.8|o-1|a0.7", "s/2", 5::ms, 15::ms),
-            new Note("10.5|o-1|a0.65", "s/2", 5::ms, 15::ms),
+            new Note("11.8|o-1|a0.7", "s/4", 15::ms, 15::ms),
+            new Note("10.5|o-1|a0.65", "s/4", 15::ms, 15::ms),
+            new Note("11.8|o-1|a0.7", "s/4", 15::ms, 15::ms),
+            new Note("10.5|o-1|a0.65", "s/4", 15::ms, 15::ms),
 
-            new Note("11.2|o-1|a0.6", "s/4", 5::ms, 5::ms),
-            new Note("6.5|o-1|a0.55", "s/4", 5::ms, 5::ms),
-            new Note("6.2|o-1|a0.5", "s/4", 5::ms, 5::ms),
-            new Note("6.8|o-1|a0.45", "s/4", 5::ms, 5::ms),
+            new Note("11.2|o-1|a0.63", "s/4", 15::ms, 15::ms),
+            new Note("6.5|o-1|a0.65", "s/4", 15::ms, 15::ms),
+            new Note("6.2|o-1|a0.68", "s/4", 15::ms, 15::ms),
+            new Note("6.8|o-1|a0.7", "s/4", 15::ms, 15::ms),
 
-            new Note("11.2|o-1|a0.4", "s/3", 15::ms, 15::ms),
-            new Note("9.8|o-1|a0.33", "s/3", 15::ms, 15::ms),
-            new Note("7.0|o-1|a0.3", "s/3", 15::ms, 15::ms),
-            new Note("6.2|o-1|a0.33", "s/2", 15::ms, 5::ms),
-            new Note("5.4|o-1|a0.33", "s/2", 15::ms, 5::ms),
+            new Note("11.2|o-1|a0.71", "s/3", 15::ms, 15::ms),
+            new Note("9.8|o-1|a0.715", "s/3", 15::ms, 15::ms),
+            new Note("11.2|o-1|a0.72", "s/3", 15::ms, 15::ms),
+            new Note("7.1|o-1|a0.725", "s/4", 15::ms, 15::ms),
+            new Note("8.4|o-1|a0.73", "s/4", 15::ms, 15::ms),
+            new Note("7.1|o-1|a0.74", "s/4", 15::ms, 15::ms),
+            new Note("8.4|o-1|a0.75", "s/4", 15::ms, 15::ms),
         ] @=> Note seq2G[];
 
         // Add sequences to scene
@@ -214,24 +218,24 @@ class Scene3 extends Scene {
         ] @=> Note restMeasure[];
 
         [
-            new Note("9.|o-1|a0.25", "w", 300::ms, 150::ms),
+            new Note("9.|o-1|a0.2", "w", 500::ms, 0::ms),
+            new Note("9.|o-1|a0.2", "w", 0::ms, 700::ms),
+            new Note("7.2|o-1|a0.17", "w", 500::ms, 0::ms),
+            new Note("7.2|o-1|a0.17", "w", 0::ms, 700::ms),
         ] @=> Note seq1A[];
 
         [
-            new Note("7.2|o-1|a0.26", "w", 300::ms, 150::ms),
+            new Note("5.3|o-1|a0.15", "w", 500::ms, 0::ms),
+            new Note("5.3|o-1|a0.15", "w", 0::ms, 700::ms),
+            new Note("7.5|o-1|a0.11", "w", 500::ms, 0::ms),
+            new Note("7.5|o-1|a0.11", "w", 0::ms, 700::ms),
         ] @=> Note seq1B[];
 
         // Add sequences to scene
         this.setSeqs(
             [
-                new Sequence(seq1A, 1),
-                new Sequence(restMeasure, 1),
-                new Sequence(seq1A, 1),
-                new Sequence(restMeasure, 1),
-                new Sequence(seq1A, 1),
-                new Sequence(restMeasure, 1),
+                new Sequence(seq1A, 3),
                 new Sequence(seq1B, 1),
-                new Sequence(restMeasure, 1),
             ]
         );
     }
