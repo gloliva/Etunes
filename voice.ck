@@ -116,8 +116,10 @@ public class Voice {
         // Sustain
         (this.clock.quarterNote * note.beatValue) - note.attack - note.release => now;
 
-        // Ramp down
-        this.voiceEnv.ramp(note.release, 0.);
-        note.release => now;
+        // Ramp down if release is not 0
+        if (note.release / 1::samp != 0){
+            this.voiceEnv.ramp(note.release, 0.);
+            note.release => now;
+        }
     }
 }
