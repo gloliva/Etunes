@@ -96,7 +96,7 @@ class Scene3 extends Scene {
 
         [
             new Note("1.0|o0|a0.45", "w", 800::ms, 0::ms),
-            new Note("1.0|o0|a0.45", "h.", 0::ms, 700::ms),
+            new Note("1.0|o0|a0.45", "h.", 0::ms, 1000::ms),
             new Note("1.0|o1|a0.45", "q", 300::ms, 0::ms),
             new Note("11.0|o0|a0.45", "w", 0::ms, 0::ms),
             new Note("11.0|o0|a0.45", "w", 0::ms, 1200::ms),
@@ -177,9 +177,33 @@ class Scene4 extends Scene {
         ] @=> Note seq5A[];
 
         [
-            new Note("0|o2|a0.1", "w", 2000::ms, 100::ms),
+            new Note("0|o2|a0.1", "w", 2000::ms, 0::ms),
         ] @=> Note seq5B[];
 
+        [
+            new Note("0.05|o2|a0.1", "e", 0::ms, 0::ms),
+            new Note("0.12|o2|a0.08", "e", 0::ms, 0::ms),
+            new Note("0.15|o2|a0.07", "e", 0::ms, 0::ms),
+            new Note("0.18|o2|a0.06", "e", 0::ms, 0::ms),
+            new Note("0.21|o2|a0.05", "e", 0::ms, 0::ms),
+            new Note("0.24|o2|a0.04", "e", 0::ms, 0::ms),
+            new Note("0.26|o2|a0.03", "e", 0::ms, 0::ms),
+            new Note("0.31|o2|a0.02", "e", 0::ms, 0::ms),
+        ] @=> Note seq5C[];
+
+        [
+            new Note("0.30|o2|a0.019", "q", 0::ms, 0::ms),
+            new Note("0.29|o2|a0.017", "q", 0::ms, 0::ms),
+            new Note("0.285|o2|a0.015", "q", 0::ms, 0::ms),
+            new Note("0.28|o2|a0.014", "q", 0::ms, 0::ms),
+
+            new Note("0.27|o2|a0.013", "q", 0::ms, 0::ms),
+            new Note("0.26|o2|a0.011", "q", 0::ms, 0::ms),
+            new Note("0.25|o2|a0.010", "q", 0::ms, 0::ms),
+            new Note("0.24|o2|a0.009", "q", 0::ms, 0::ms),
+
+            new Note("0.235|o2|a0.008", "w", 0::ms, 1000::ms),
+        ] @=> Note seq5D[];
 
 
         // Add sequences to scene
@@ -190,6 +214,8 @@ class Scene4 extends Scene {
                 new Sequence(seq5A, 1),
                 new Sequence(restMeasure, 1),
                 new Sequence(seq5B, 1),
+                new Sequence(seq5C, 1),
+                new Sequence(seq5D, 1),
             ]
         );
     }

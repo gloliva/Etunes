@@ -268,7 +268,7 @@ class Scene3 extends Scene {
 
         [
             new Note("9.|o-1|a0.6", "w", 800::ms, 0::ms),
-            new Note("9.|o-1|a0.58", "h.", 0::ms, 800::ms),
+            new Note("9.|o-1|a0.58", "h.", 0::ms, 1000::ms),
             new Note("10.5|o-1|a0.55", "q", 300::ms, 0::ms),
             new Note("7.2|o-1|a0.6", "w", 0::ms, 0::ms),
             new Note("7.2|o-1|a0.58", "w", 0::ms, 800::ms),
@@ -430,20 +430,6 @@ class Scene4 extends Scene {
             new Note("0|o0|a0.25", "s", 25::ms, 25::ms),
         ] @=> Note seq2F[];
 
-        // [
-        //     new Note("0|o0|a0.50", "s", 25::ms, 25::ms),
-        //     new RestNote("s"),
-        //     new Note("0|o0|a0.45", "s", 25::ms, 25::ms),
-        //     new RestNote("s"),
-        // ] @=> Note seq2F[];
-
-        // [
-        //     new Note("0|o0|a0.50", "s", 25::ms, 25::ms),
-        //     new RestNote("e."),
-        //     new RestNote("h"),
-        // ] @=> Note seq2G[];
-
-
         // Add sequences to scene
         this.setSeqs(
             [
@@ -470,8 +456,7 @@ class Scene4 extends Scene {
 
                 new Sequence(seq2E, 8),
                 new Sequence(seq2F, 16),
-                // new Sequence(seq2F, 2),
-                // new Sequence(seq2G, 1),
+                new Sequence(restMeasure, 4),
             ]
         );
     }
