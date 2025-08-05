@@ -156,11 +156,40 @@ class Scene4 extends Scene {
             new Note("9.0|o0|a0.45", "w", 0::ms, 1500::ms),
         ] @=> Note seq1A[];
 
+        [
+            new Note("0|o0|a0.38", "w", 2000::ms, 0::ms),
+            new Note("0|o0|a0.38", "w", 0::ms, 1000::ms),
+
+            new Note("1.5|o0|a0.35", "w", 1000::ms, 0::ms),
+            new Note("1.5|o0|a0.35", "w", 0::ms, 1000::ms),
+
+            new Note("10.5|o-1|a0.30", "w", 1000::ms, 0::ms),
+            new Note("10.5|o-1|a0.30", "w", 0::ms, 1000::ms),
+
+            new Note("0|o0|a0.25", "w", 1000::ms, 0::ms),
+            new Note("0|o0|a0.25", "w", 0::ms, 1000::ms),
+
+            new Note("7|o-1|a0.20", "w", 1000::ms, 0::ms),
+            new Note("7|o-1|a0.18", "w", 0::ms, 0::ms),
+
+            new Note("0|o0|a0.16", "w", 0::ms, 0::ms),
+            new Note("0|o0|a0.15", "w", 0::ms, 2000::ms),
+        ] @=> Note seq5A[];
+
+        [
+            new Note("0|o2|a0.1", "w", 2000::ms, 100::ms),
+        ] @=> Note seq5B[];
+
+
+
         // Add sequences to scene
         this.setSeqs(
             [
                 new Sequence(seq1A, 1),
-                new Sequence(restMeasure, 31),
+                new Sequence(restMeasure, 29),
+                new Sequence(seq5A, 1),
+                new Sequence(restMeasure, 1),
+                new Sequence(seq5B, 1),
             ]
         );
     }
