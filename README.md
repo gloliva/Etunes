@@ -16,7 +16,7 @@ Install "smuck" via chump:
     chuck --dac:<ID_OF_ES8_INTERFACE> --out:16 --adc:<ID_OF_ES8_INTERFACE> --in:12 main.ck:<OPUS NUMBER>
 ```
 
-## Étune1 - Shifting Intervals
+## Étune1 - Fluid
 
 ### Details
 
@@ -34,7 +34,7 @@ Voice 4: **F2**
     chuck --dac:<ID_OF_ES8_INTERFACE> --out:16 --adc:<ID_OF_ES8_INTERFACE> --in:12 main.ck:1
 ```
 
-## Étune2 - Split Channel
+## Étune2 - Fractured
 
 ### Details
 
@@ -46,4 +46,16 @@ All oscillators tuned to **E2**.
 
 ```bash
     chuck --dac:<ID_OF_ES8_INTERFACE> --out:16 --adc:<ID_OF_ES8_INTERFACE> --in:12 main.ck:2
+```
+
+## Étune3 - Staircase
+
+### Details
+
+Number of oscillators: **4**.
+
+### How to Run
+
+```bash
+    chuck --dac:<ID_OF_ES8_INTERFACE> --out:16 --adc:<ID_OF_ES8_INTERFACE> --in:12 main.ck:3
 ```
