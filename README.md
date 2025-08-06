@@ -22,11 +22,11 @@ Install "smuck" via chump:
 
 Number of oscillators: **4**.
 
-**Tuning**:\
-Voice 1: **F1**.\
-Voice 2: **F2**.\
-Voice 3: **F1**.\
-Voice 4: **F2**.
+**Tuning**\
+Voice 1: **F1**\
+Voice 2: **F2**\
+Voice 3: **F1**\
+Voice 4: **F2**
 
 ### How to Run
 
