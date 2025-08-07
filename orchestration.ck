@@ -3,7 +3,7 @@
 */
 
 // Imports
-@import {"etune1/metadata.ck" , "etune2/metadata.ck"}
+@import {"etune1/metadata.ck" , "etune2/metadata.ck", "etune3/metadata.ck"}
 @import "clock.ck"
 @import "metadata.ck"
 @import "notation.ck"
@@ -31,7 +31,7 @@ public class Orchestrator {
         } else if (opusIdx == 2) {
             new Etune2Metadata() @=> metadata;
         } else if (opusIdx == 3) {
-
+            new Etune3Metadata() @=> metadata;
         } else {
             cherr <= "ERROR: Invalid Opus number: " <= opusIdx <= IO.nl();
             me.exit();
