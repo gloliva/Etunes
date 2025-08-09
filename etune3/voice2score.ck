@@ -9,23 +9,41 @@ class Scene1 extends Scene {
 
         [
             new RestNote("h"),
-            new Note("0|o0|a0.4", "te", 50::ms, 50::ms),
+            new Note("0|o0|a0.2", "te", 50::ms, 50::ms),
             new Note("0|o0|a0.3", "te", 50::ms, 50::ms),
+            new Note("0|o0|a0.2", "te", 50::ms, 50::ms),
             new Note("0|o0|a0.4", "te", 50::ms, 50::ms),
-            new Note("0|o0|a0.5", "te", 50::ms, 50::ms),
             new RestNote("te"),
             new RestNote("te"),
         ] @=> Note seq1A[];
 
         [
             new RestNote("h"),
-            new Note("0|o0|a0.4", "te", 50::ms, 50::ms),
+            new Note("0|o0|a0.2", "te", 50::ms, 50::ms),
             new Note("0|o2|a0.3", "te", 50::ms, 50::ms),
-            new Note("0|o2|a0.4", "te", 50::ms, 50::ms),
-            new Note("0|o0|a0.5", "te", 50::ms, 50::ms),
+            new Note("0|o2|a0.2", "te", 50::ms, 50::ms),
+            new Note("0|o1|a0.4", "te", 50::ms, 50::ms),
             new RestNote("te"),
             new RestNote("te"),
         ] @=> Note seq1B[];
+
+        [
+            new Note("0|o0|a0.4", "s", 5::ms, 45::ms),
+            new Note("0|o1|a0.3", "s", 5::ms, 45::ms),
+
+            new Note("0|o0|a0.3", "e", 5::ms, 45::ms),
+            new RestNote("e"),
+            new Note("0|o0|a0.22", "e", 5::ms, 45::ms),
+
+            new Note("0|o0|a0.2", "te", 50::ms, 50::ms),
+            new Note("0|o2|a0.3", "e/3", 15::ms, 15::ms),
+            new Note("0|o1|a0.1", "e/3", 15::ms, 15::ms),
+            new Note("0|o2|a0.2", "te", 50::ms, 50::ms),
+
+            new Note("0|o1|a0.3", "te", 50::ms, 50::ms),
+            new RestNote("te"),
+            new Note("0|o0|a0.2", "te", 50::ms, 50::ms),
+        ] @=> Note seq2A[];
 
         // Add sequences to scene
         this.setSeqs(
@@ -34,7 +52,9 @@ class Scene1 extends Scene {
                 new Sequence(seq1A, 2),
                 new Sequence(restMeasure, 2),
                 new Sequence(seq1B, 2),
-                new Sequence(restMeasure, 10),
+                new Sequence(restMeasure, 2),
+                new Sequence(seq2A, 8),
+                new Sequence(restMeasure, 4),
             ]
         );
     }

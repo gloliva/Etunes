@@ -27,6 +27,7 @@ class Scene1 extends Scene {
                 new Sequence(seq1A, 1),
                 new Sequence(seq1B, 6),
                 new Sequence(seq1C, 1),
+                new Sequence(restMeasure, 4),
             ]
         );
     }

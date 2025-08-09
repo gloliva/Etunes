@@ -54,6 +54,19 @@ class Scene1 extends Scene {
             new Note("0|o0|a0.6", "q", 50::ms, 50::ms),
         ] @=> Note seq4B[];
 
+        [
+            new RestNote("q"),
+            new Note("0|o0|a0.6", "q", 50::ms, 50::ms),
+            new RestNote("q"),
+            new Note("0|o0|a0.6", "q", 50::ms, 50::ms),
+        ] @=> Note seq5A[];
+
+        [
+            new RestNote("h"),
+            new Note("0|o0|a0.6", "q", 50::ms, 50::ms),
+            new RestNote("q"),
+        ] @=> Note seq5B[];
+
         // Add sequences to scene
         this.setSeqs(
             [
@@ -64,6 +77,8 @@ class Scene1 extends Scene {
                 new Sequence(seq3B, 4),
                 new Sequence(seq4A, 4),
                 new Sequence(seq4B, 4),
+                new Sequence(seq5A, 2),
+                new Sequence(seq5B, 2),
             ]
         );
     }
