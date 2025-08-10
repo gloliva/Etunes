@@ -54,6 +54,12 @@ All oscillators tuned to **E2**.
 
 Number of oscillators: **4**.
 
+**Tuning**\
+Voice 1: **A1**\
+Voice 2: **A2**\
+Voice 3: **A2**\
+Voice 4: **A2**
+
 ### How to Run
 
 ```bash
