@@ -216,7 +216,7 @@ class Scene4 extends Scene {
 
         [
             new Note("0|o0|a0.35", "w", 1500::ms, 0::ms),
-            new Note("0|o0|a0.45", "w", 1500::ms, 150::ms),
+            new Note("0|o0|a0.55", "w", 1500::ms, 150::ms),
         ] @=> Note seq2A[];
 
 

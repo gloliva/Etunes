@@ -141,28 +141,6 @@ class Scene4 extends Scene {
             new Note("3|o2|a0.20", "w", 0::ms, 1000::ms),
         ] @=> Note seq1A[];
 
-        // [
-        //     new Note("0|o0|a0.23", "w", 300::ms, 0::ms),
-        // ] @=> Note seq1A[];
-
-        // [
-        //     new Note("1|o0|a0.23", "s", 0::ms, 0::ms),
-        //     new Note("0|o0|a0.20", "s", 0::ms, 0::ms),
-        //     new Note("1|o0|a0.23", "s", 0::ms, 0::ms),
-        //     new Note("0|o0|a0.20", "s", 0::ms, 0::ms),
-        // ] @=> Note seq1B[];
-
-        // [
-        //     new Note("3|o0|a0.23", "s", 0::ms, 0::ms),
-        //     new Note("2|o0|a0.20", "s", 0::ms, 0::ms),
-        //     new Note("3|o0|a0.23", "s", 0::ms, 0::ms),
-        //     new Note("2|o0|a0.20", "s", 0::ms, 0::ms),
-        // ] @=> Note seq1C[];
-
-        // [
-        //     new Note("0|o0|a0.23", "w", 0::ms, 300::ms),
-        // ] @=> Note seq1D[];
-
         [
             new Note("0|o1|a0.05", "s", 10::ms, 0::ms),
             new Note("1|o1|a0.08", "s", 0::ms, 0::ms),
@@ -189,12 +167,24 @@ class Scene4 extends Scene {
 
         [
             new Note("2|o2|a0.25", "w", 1500::ms, 0::ms),
-            new Note("2|o2|a0.25", "w", 0::ms, 75::ms),
+            new Note("2|o2|a0.25", "w", 0::ms, 150::ms),
         ] @=> Note seq2C[];
 
         [
+            new Note("0|o1|a0.10", "s", 10::ms, 0::ms),
+            new Note("1|o1|a0.14", "s", 0::ms, 0::ms),
+            new Note("2|o1|a0.17", "s", 0::ms, 0::ms),
+            new Note("3|o1|a0.22", "s", 0::ms, 0::ms),
+
+            new Note("0|o2|a0.25", "s", 0::ms, 0::ms),
+            new Note("3|o1|a0.29", "s", 0::ms, 0::ms),
+            new Note("2|o1|a0.34", "s", 0::ms, 0::ms),
+            new Note("1|o1|a0.39", "s", 0::ms, 10::ms),
+        ] @=> Note seq2D[];
+
+        [
             new Note("1|o1|a0.25", "w", 1500::ms, 0::ms),
-            new Note("1|o1|a0.35", "w", 1500::ms, 150::ms),
+            new Note("1|o1|a0.45", "w", 1500::ms, 50::ms),
         ] @=> Note seq3A[];
 
 
@@ -210,7 +200,7 @@ class Scene4 extends Scene {
                 new Sequence(seq2B, 4),
 
                 new Sequence(seq2C, 1),
-                new Sequence(seq2A, 4),
+                new Sequence(seq2D, 4),
 
                 new Sequence(restMeasure, 2),
                 new Sequence(seq3A, 1),

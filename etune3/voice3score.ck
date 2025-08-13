@@ -109,45 +109,10 @@ class Scene4 extends Scene {
             new RestNote("q"),
         ] @=> Note restBeat[];
 
-        // [
-        //     new Note("0|o0|a0.5", "e", 45::ms, 45::ms),
-        //     new RestNote("e"),
-
-        //     new Note("3|o0|a0.4", "e", 45::ms, 45::ms),
-        //     new RestNote("e"),
-
-        //     new Note("0|o0|a0.3", "e", 45::ms, 45::ms),
-        //     new RestNote("e"),
-
-        //     new Note("3|o0|a0.4", "e", 45::ms, 45::ms),
-        //     new Note("0|o0|a0.3", "e", 85::ms, 85::ms),
-        // ] @=> Note seq1A[];
-
-        // [
-        //     new Note("2|o0|a0.5", "e", 45::ms, 45::ms),
-        //     new RestNote("e"),
-
-        //     new Note("0|o1|a0.4", "e", 45::ms, 45::ms),
-        //     new RestNote("e"),
-
-        //     new Note("2|o0|a0.3", "e", 45::ms, 45::ms),
-        //     new RestNote("e"),
-
-        //     new Note("0|o1|a0.4", "e", 45::ms, 45::ms),
-        //     new RestNote("e"),
-        // ] @=> Note seq1B[];
-
         [
             new Note("1|o2|a0.22", "w", 0::ms, 0::ms),
             new Note("1|o2|a0.22", "w", 0::ms, 1000::ms),
         ] @=> Note seq1A[];
-
-        // [
-        //     new Note("1|o0|a0.15", "w", 300::ms, 0::ms),
-        //     new Note("1|o0|a0.15", "w", 0::ms, 0::ms),
-        //     new Note("1|o0|a0.15", "w", 0::ms, 0::ms),
-        //     new Note("1|o0|a0.15", "w", 0::ms, 300::ms),
-        // ] @=> Note seq2A[];
 
         [
             new Note("1|o1|a0.05", "s", 10::ms, 0::ms),
@@ -168,17 +133,13 @@ class Scene4 extends Scene {
 
         [
             new Note("3|o0|a0.28", "w", 1500::ms, 0::ms),
-            new Note("3|o0|a0.38", "w", 1500::ms, 150::ms),
+            new Note("3|o0|a0.42", "w", 1500::ms, 50::ms),
         ] @=> Note seq3A[];
 
 
         // Add sequences to scene
         this.setSeqs(
             [
-                // new Sequence(seq1A, 4),
-                // new Sequence(seq1B, 2),
-                // new Sequence(seq1A, 2),
-
                 new Sequence(seq1A, 1),
                 new Sequence(restMeasure, 4),
                 new Sequence(restBeat, 1),
