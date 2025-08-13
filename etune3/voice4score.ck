@@ -202,6 +202,64 @@ class Scene4 extends Scene {
 }
 
 
+class Scene5 extends Scene {
+    fun @construct() {
+        [
+            new RestNote("w"),
+        ] @=> Note restMeasure[];
+
+        [
+            new RestNote("e"),
+            new Note("1|o0|a0.5", "e", 25::ms, 50::ms),
+            new RestNote("e"),
+            new Note("3|o0|a0.45", "e", 25::ms, 50::ms),
+            new RestNote("e"),
+            new Note("4|o0|a0.45", "e", 25::ms, 50::ms),
+            new RestNote("e"),
+            new Note("0|o0|a0.5", "e", 25::ms, 50::ms),
+        ] @=> Note seq1A[];
+
+        [
+            new RestNote("e"),
+            new Note("2|o0|a0.5", "e", 25::ms, 50::ms),
+            new RestNote("e"),
+            new Note("4|o0|a0.45", "e", 25::ms, 50::ms),
+            new RestNote("e"),
+            new Note("0|o1|a0.45", "e", 25::ms, 50::ms),
+            new RestNote("e"),
+            new Note("4|o0|a0.5", "e", 25::ms, 50::ms),
+        ] @=> Note seq1B[];
+
+        [
+            new RestNote("e"),
+            new Note("2|o0|a0.5", "e", 25::ms, 50::ms),
+            new RestNote("e"),
+            new Note("4|o0|a0.45", "e", 25::ms, 50::ms),
+            new RestNote("e"),
+            new Note("0|o1|a0.45", "e", 25::ms, 50::ms),
+
+            new Note("4|o0|a0.5", "q/3", 25::ms, 50::ms),
+            new Note("3|o0|a0.5", "q/3", 25::ms, 50::ms),
+            new Note("4|o0|a0.5", "q/3", 25::ms, 50::ms),
+        ] @=> Note seq2A[];
+
+        // Add sequences to scene
+        this.setSeqs(
+            [
+                new Sequence(seq1A, 4),
+                new Sequence(seq1B, 2),
+                new Sequence(seq1A, 6),
+                new Sequence(seq1B, 2),
+                new Sequence(seq1A, 2),
+
+                new Sequence(seq2A, 2),
+                new Sequence(seq1A, 2),
+            ]
+        );
+    }
+}
+
+
 public class Etune3Voice4Score extends Score {
     fun @construct() {
         4 => this.voiceNum;
@@ -211,5 +269,6 @@ public class Etune3Voice4Score extends Score {
         this.scenes << new Scene2();
         this.scenes << new Scene3();
         this.scenes << new Scene4();
+        this.scenes << new Scene5();
     }
 }

@@ -160,6 +160,60 @@ class Scene4 extends Scene {
 }
 
 
+class Scene5 extends Scene {
+    fun @construct() {
+        [
+            new RestNote("w"),
+        ] @=> Note restMeasure[];
+
+        [
+            new Note("0|o-1|a0.6", "e.", 25::ms, 150::ms),
+            new RestNote("s"),
+            new Note("0|o-1|a0.45", "e.", 25::ms, 150::ms),
+            new RestNote("s"),
+            new Note("0|o-1|a0.5", "e.", 25::ms, 150::ms),
+            new RestNote("s"),
+            new Note("0|o-1|a0.45", "e.", 25::ms, 150::ms),
+            new RestNote("s"),
+        ] @=> Note seq1A[];
+
+        [
+            new Note("1|o-1|a0.6", "e.", 25::ms, 150::ms),
+            new RestNote("s"),
+            new Note("1|o-1|a0.45", "e.", 25::ms, 150::ms),
+            new RestNote("s"),
+            new Note("1|o-1|a0.5", "e.", 25::ms, 150::ms),
+            new RestNote("s"),
+            new Note("1|o-1|a0.45", "e.", 25::ms, 150::ms),
+            new RestNote("s"),
+        ] @=> Note seq1B[];
+
+        [
+            new Note("1|o-1|a0.6", "e.", 25::ms, 150::ms),
+            new RestNote("s"),
+            new Note("1|o-1|a0.45", "e.", 25::ms, 150::ms),
+            new RestNote("s"),
+            new Note("1|o-1|a0.5", "e.", 25::ms, 150::ms),
+            new RestNote("s"),
+            new RestNote("q"),
+        ] @=> Note seq2A[];
+
+        // Add sequences to scene
+        this.setSeqs(
+            [
+                new Sequence(seq1A, 4),
+                new Sequence(seq1B, 2),
+                new Sequence(seq1A, 6),
+                new Sequence(seq1B, 2),
+                new Sequence(seq1A, 2),
+
+                new Sequence(seq2A, 2),
+                new Sequence(seq1A, 2),
+            ]
+        );
+    }
+}
+
 
 public class Etune3Voice3Score extends Score {
     fun @construct() {
@@ -170,5 +224,6 @@ public class Etune3Voice3Score extends Score {
         this.scenes << new Scene2();
         this.scenes << new Scene3();
         this.scenes << new Scene4();
+        this.scenes << new Scene5();
     }
 }
