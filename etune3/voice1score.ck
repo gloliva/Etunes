@@ -189,28 +189,6 @@ class Scene4 extends Scene {
         ] @=> Note restMeasure[];
 
         [
-            new Note("3|o0|a0.6", "e", 50::ms, 50::ms),
-            new Note("0|o0|a0.5", "e", 50::ms, 50::ms),
-            new Note("1|o0|a0.35", "e", 50::ms, 50::ms),
-            new Note("2|o0|a0.5", "e", 50::ms, 50::ms),
-
-            new Note("0|o0|a0.5", "h/3", 150::ms, 150::ms),
-            new Note("0|o0|a0.4", "h/3", 150::ms, 150::ms),
-            new Note("0|o0|a0.5", "h/3", 150::ms, 150::ms),
-        ] @=> Note seq1A[];
-
-        [
-            new Note("0|o1|a0.6", "e", 50::ms, 50::ms),
-            new Note("1|o0|a0.5", "e", 50::ms, 50::ms),
-            new Note("2|o0|a0.35", "e", 50::ms, 50::ms),
-            new Note("3|o0|a0.5", "e", 50::ms, 50::ms),
-
-            new Note("2|o0|a0.5", "h/3", 150::ms, 150::ms),
-            new Note("2|o0|a0.4", "h/3", 150::ms, 150::ms),
-            new Note("2|o0|a0.5", "h/3", 150::ms, 150::ms),
-        ] @=> Note seq1B[];
-
-        [
             new Note("0|o0|a0.5", "h/3", 150::ms, 150::ms),
             new Note("0|o0|a0.4", "h/3", 150::ms, 150::ms),
             new Note("0|o0|a0.5", "h/3", 150::ms, 150::ms),
@@ -221,7 +199,7 @@ class Scene4 extends Scene {
             new Note("3|o0|a0.5", "h/6", 75::ms, 75::ms),
             new Note("0|o0|a0.4", "h/6", 75::ms, 75::ms),
             new Note("2|o0|a0.5", "h/6", 75::ms, 75::ms),
-        ] @=> Note seq2A[];
+        ] @=> Note seq1A[];
 
         [
             new Note("2|o0|a0.5", "h/3", 150::ms, 150::ms),
@@ -234,18 +212,23 @@ class Scene4 extends Scene {
             new Note("0|o1|a0.5", "h/6", 75::ms, 75::ms),
             new Note("1|o0|a0.4", "h/6", 75::ms, 75::ms),
             new Note("3|o0|a0.5", "h/6", 75::ms, 75::ms),
-        ] @=> Note seq2B[];
+        ] @=> Note seq1B[];
+
+        [
+            new Note("0|o0|a0.35", "w", 1500::ms, 0::ms),
+            new Note("0|o0|a0.45", "w", 1500::ms, 150::ms),
+        ] @=> Note seq2A[];
 
 
         // Add sequences to scene
         this.setSeqs(
             [
-                new Sequence(seq1A, 4),
+                new Sequence(seq1A, 12),
                 new Sequence(seq1B, 2),
                 new Sequence(seq1A, 2),
-                new Sequence(seq2A, 4),
-                new Sequence(seq2B, 2),
-                new Sequence(seq2A, 2),
+
+                new Sequence(restMeasure, 2),
+                new Sequence(seq2A, 1),
             ]
         );
     }

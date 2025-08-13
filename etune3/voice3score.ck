@@ -85,7 +85,7 @@ class Scene3 extends Scene {
             new Note("1|o1|a0.25", "w", 300::ms, 0::ms),
             new Note("1|o1|a0.25", "w", 0::ms, 0::ms),
             new Note("1|o2|a0.25", "w", 0::ms, 0::ms),
-            new Note("1|o2|a0.25", "w", 0::ms, 300::ms),
+            new Note("1|o2|a0.25", "w", 0::ms, 0::ms),
         ] @=> Note seq1B[];
 
         // Add sequences to scene
@@ -106,40 +106,93 @@ class Scene4 extends Scene {
         ] @=> Note restMeasure[];
 
         [
-            new Note("0|o0|a0.5", "e", 45::ms, 45::ms),
-            new RestNote("e"),
+            new RestNote("q"),
+        ] @=> Note restBeat[];
 
-            new Note("3|o0|a0.4", "e", 45::ms, 45::ms),
-            new RestNote("e"),
+        // [
+        //     new Note("0|o0|a0.5", "e", 45::ms, 45::ms),
+        //     new RestNote("e"),
 
-            new Note("0|o0|a0.3", "e", 45::ms, 45::ms),
-            new RestNote("e"),
+        //     new Note("3|o0|a0.4", "e", 45::ms, 45::ms),
+        //     new RestNote("e"),
 
-            new Note("3|o0|a0.4", "e", 45::ms, 45::ms),
-            new Note("0|o0|a0.3", "e", 85::ms, 85::ms),
-        ] @=> Note seq1A[];
+        //     new Note("0|o0|a0.3", "e", 45::ms, 45::ms),
+        //     new RestNote("e"),
+
+        //     new Note("3|o0|a0.4", "e", 45::ms, 45::ms),
+        //     new Note("0|o0|a0.3", "e", 85::ms, 85::ms),
+        // ] @=> Note seq1A[];
+
+        // [
+        //     new Note("2|o0|a0.5", "e", 45::ms, 45::ms),
+        //     new RestNote("e"),
+
+        //     new Note("0|o1|a0.4", "e", 45::ms, 45::ms),
+        //     new RestNote("e"),
+
+        //     new Note("2|o0|a0.3", "e", 45::ms, 45::ms),
+        //     new RestNote("e"),
+
+        //     new Note("0|o1|a0.4", "e", 45::ms, 45::ms),
+        //     new RestNote("e"),
+        // ] @=> Note seq1B[];
 
         [
-            new Note("2|o0|a0.5", "e", 45::ms, 45::ms),
-            new RestNote("e"),
+            new Note("1|o2|a0.22", "w", 0::ms, 0::ms),
+            new Note("1|o2|a0.22", "w", 0::ms, 1000::ms),
+        ] @=> Note seq1A[];
 
-            new Note("0|o1|a0.4", "e", 45::ms, 45::ms),
-            new RestNote("e"),
+        // [
+        //     new Note("1|o0|a0.15", "w", 300::ms, 0::ms),
+        //     new Note("1|o0|a0.15", "w", 0::ms, 0::ms),
+        //     new Note("1|o0|a0.15", "w", 0::ms, 0::ms),
+        //     new Note("1|o0|a0.15", "w", 0::ms, 300::ms),
+        // ] @=> Note seq2A[];
 
-            new Note("2|o0|a0.3", "e", 45::ms, 45::ms),
-            new RestNote("e"),
+        [
+            new Note("1|o1|a0.05", "s", 10::ms, 0::ms),
+            new Note("2|o1|a0.08", "s", 0::ms, 0::ms),
+            new Note("3|o1|a0.12", "s", 0::ms, 0::ms),
+            new Note("0|o2|a0.14", "s", 0::ms, 0::ms),
 
-            new Note("0|o1|a0.4", "e", 45::ms, 45::ms),
-            new RestNote("e"),
-        ] @=> Note seq1B[];
+            new Note("1|o2|a0.18", "s", 0::ms, 0::ms),
+            new Note("0|o2|a0.22", "s", 0::ms, 0::ms),
+            new Note("3|o1|a0.28", "s", 0::ms, 0::ms),
+            new Note("2|o1|a0.33", "s", 0::ms, 10::ms),
+        ] @=> Note seq2A[];
+
+        [
+            new Note("1|o2|a0.28", "w", 1500::ms, 0::ms),
+            new Note("1|o2|a0.28", "w", 0::ms, 75::ms),
+        ] @=> Note seq2B[];
+
+        [
+            new Note("3|o0|a0.28", "w", 1500::ms, 0::ms),
+            new Note("3|o0|a0.38", "w", 1500::ms, 150::ms),
+        ] @=> Note seq3A[];
 
 
         // Add sequences to scene
         this.setSeqs(
             [
-                new Sequence(seq1A, 4),
-                new Sequence(seq1B, 2),
-                new Sequence(seq1A, 2),
+                // new Sequence(seq1A, 4),
+                // new Sequence(seq1B, 2),
+                // new Sequence(seq1A, 2),
+
+                new Sequence(seq1A, 1),
+                new Sequence(restMeasure, 4),
+                new Sequence(restBeat, 1),
+                new Sequence(seq2A, 4),
+                new Sequence(restMeasure, 1),
+                new Sequence(restBeat, 2),
+                new Sequence(seq2A, 4),
+
+                new Sequence(seq2B, 1),
+                new Sequence(restBeat, 1),
+                new Sequence(seq2A, 4),
+
+                new Sequence(restMeasure, 2),
+                new Sequence(seq3A, 1),
             ]
         );
     }
