@@ -34,7 +34,7 @@ public class Etune3Metadata extends ScoreMetadata {
         this.voiceScores << new Etune3Voice4Score();
 
         // Set tunings
-        5 => int maxEDO;
+        13 => int maxEDO;
         for (1 => int edoNum; edoNum <= maxEDO; edoNum++) {
             this.setTuning(new EDO(edoNum), 1, edoNum);
             this.setTuning(new EDO(edoNum), 2, edoNum);
