@@ -395,6 +395,72 @@ class Scene7 extends Scene {
             new Note("1|o1|a0.45", "s", 25::ms, 25::ms),
         ] @=> Note seq1B[];
 
+        [
+            new Note("4|o1|a0.6", "s", 25::ms, 25::ms),
+            new Note("4|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("4|o1|a0.5", "s", 25::ms, 25::ms),
+            new Note("4|o1|a0.45", "s", 25::ms, 25::ms),
+
+            new Note("4|o1|a0.6", "s", 25::ms, 25::ms),
+            new Note("4|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("4|o1|a0.5", "s", 25::ms, 25::ms),
+            new Note("4|o1|a0.45", "s", 25::ms, 25::ms),
+
+            new Note("4|o1|a0.6", "s", 25::ms, 25::ms),
+            new Note("4|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("4|o1|a0.5", "s", 25::ms, 25::ms),
+            new Note("4|o1|a0.45", "s", 25::ms, 25::ms),
+
+            new Note("2|o1|a0.6", "s", 25::ms, 25::ms),
+            new Note("2|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("2|o1|a0.5", "s", 25::ms, 25::ms),
+            new Note("2|o1|a0.45", "s", 25::ms, 25::ms),
+        ] @=> Note seq1C[];
+
+        [
+            new Note("6|o1|a0.6", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.5", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+
+            new Note("6|o1|a0.6", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.5", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+
+            new Note("6|o1|a0.6", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.5", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+
+            new Note("4|o1|a0.6", "s", 25::ms, 25::ms),
+            new Note("4|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("4|o1|a0.5", "s", 25::ms, 25::ms),
+            new Note("4|o1|a0.45", "s", 25::ms, 25::ms),
+        ] @=> Note seq1D[];
+
+        [
+            new Note("6|o1|a0.6", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.5", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+
+            new Note("6|o1|a0.6", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.5", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+
+            new Note("6|o1|a0.6", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.5", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+
+            new Note("6|o1|a0.6", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.5", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+        ] @=> Note seq1E[];
+
 
         // Add sequences to scene
         this.setSeqs(
@@ -404,6 +470,11 @@ class Scene7 extends Scene {
                 new Sequence(seq1A, 2),
                 new Sequence(seq1B, 2),
                 new Sequence(seq1A, 2),
+                new Sequence(seq1B, 2),
+                new Sequence(seq1C, 1),
+                new Sequence(seq1D, 1),
+                new Sequence(seq1C, 1),
+                new Sequence(seq1E, 3),
             ]
         );
     }

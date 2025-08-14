@@ -273,6 +273,14 @@ class Scene7 extends Scene {
         ] @=> Note seq1A[];
 
         [
+            new RestNote("h"),
+            new Note("0|o-1|a0.25", "e", 25::ms, 150::ms),
+            new Note("0|o-1|a0.35", "e", 25::ms, 150::ms),
+            new Note("0|o-1|a0.45", "e", 25::ms, 150::ms),
+            new Note("0|o-1|a0.55", "e", 25::ms, 150::ms),
+        ] @=> Note seq1B[];
+
+        [
             new Note("2|o-1|a0.6", "e.", 25::ms, 150::ms),
             new RestNote("s"),
             new Note("2|o-1|a0.45", "e.", 25::ms, 150::ms),
@@ -281,35 +289,25 @@ class Scene7 extends Scene {
             new RestNote("s"),
             new Note("2|o-1|a0.45", "e.", 25::ms, 150::ms),
             new RestNote("s"),
-        ] @=> Note seq1B[];
-
-        [
-            new Note("1|o-1|a0.6", "e.", 25::ms, 150::ms),
-            new RestNote("s"),
-            new Note("1|o-1|a0.45", "e.", 25::ms, 150::ms),
-            new RestNote("s"),
-            new Note("1|o-1|a0.5", "e.", 25::ms, 150::ms),
-            new RestNote("s"),
-            new RestNote("q"),
-        ] @=> Note seq2A[];
+        ] @=> Note seq1C[];
 
         // Add sequences to scene
         this.setSeqs(
             [
                 new Sequence(seq1A, 4),
+                new Sequence(restMeasure, 1),
+                new Sequence(seq1B, 1),
+                new Sequence(seq1A, 2),
+                new Sequence(seq1C, 2),
+                new Sequence(seq1A, 2),
+                new Sequence(seq1C, 2),
+                new Sequence(seq1A, 2),
+                new Sequence(seq1C, 2),
+                new Sequence(seq1A, 1),
+                new Sequence(seq1C, 1),
+                new Sequence(seq1A, 1),
+                new Sequence(seq1C, 1),
                 new Sequence(restMeasure, 2),
-                new Sequence(seq1A, 2),
-                new Sequence(seq1B, 2),
-                new Sequence(seq1A, 2),
-                new Sequence(seq1B, 2),
-                new Sequence(seq1A, 2),
-                // new Sequence(seq1B, 2),
-                // new Sequence(seq1A, 6),
-                // new Sequence(seq1B, 2),
-                // new Sequence(seq1A, 2),
-
-                // new Sequence(seq2A, 2),
-                // new Sequence(seq1A, 2),
             ]
         );
     }
