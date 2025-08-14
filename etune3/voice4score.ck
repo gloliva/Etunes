@@ -428,7 +428,8 @@ class Scene9 extends Scene {
         // Add sequences to scene
         this.setSeqs(
             [
-                new Sequence(seq1A, 8),
+                new Sequence(seq1A, 16),
+                new Sequence(restMeasure, 8),
             ]
         );
     }

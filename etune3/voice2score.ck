@@ -567,6 +567,10 @@ class Scene9 extends Scene {
             [
                 new Sequence(seq1A, 16),
                 new Sequence(seq1B, 16),
+                new Sequence(seq1A, 16),
+                new Sequence(seq1B, 16),
+                new Sequence(seq1A, 16),
+                new Sequence(seq1B, 16),
             ]
         );
     }

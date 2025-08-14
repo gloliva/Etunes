@@ -391,10 +391,41 @@ class Scene9 extends Scene {
             new RestNote("s"),
         ] @=> Note seq1A[];
 
+        [
+            new Note("2|o0|a0.6", "e", 25::ms, 150::ms),
+            new Note("2|o1|a0.6", "s", 25::ms, 25::ms),
+            new Note("2|o2|a0.55", "s", 25::ms, 25::ms),
+
+            new RestNote("q"),
+            new RestNote("e."),
+
+            new Note("8|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("5|o1|a0.55", "e", 25::ms, 150::ms),
+            new Note("5|o0|a0.6", "s", 25::ms, 25::ms),
+            new RestNote("s"),
+        ] @=> Note seq1B[];
+
+        [
+            new Note("2|o0|a0.6", "e", 25::ms, 150::ms),
+            new Note("2|o1|a0.6", "s", 25::ms, 25::ms),
+            new Note("2|o2|a0.55", "s", 25::ms, 25::ms),
+
+            new RestNote("q"),
+            new RestNote("e."),
+
+            new Note("8|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("5|o1|a0.55", "e", 25::ms, 150::ms),
+            new RestNote("e"),
+        ] @=> Note seq1C[];
+
         // Add sequences to scene
         this.setSeqs(
             [
                 new Sequence(seq1A, 8),
+                new Sequence(seq1B, 4),
+                new Sequence(seq1A, 4),
+                new Sequence(seq1B, 7),
+                new Sequence(seq1C, 1),
             ]
         );
     }
