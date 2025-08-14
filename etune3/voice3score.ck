@@ -346,6 +346,20 @@ class Scene8 extends Scene {
             new Note("7|o-1|a0.45", "te", 25::ms, 75::ms),
             new Note("6|o-1|a0.55", "te", 25::ms, 75::ms),
             new Note("7|o-1|a0.45", "te", 25::ms, 75::ms),
+
+            new Note("0|o-1|a0.6", "e.", 25::ms, 150::ms),
+            new RestNote("s"),
+            new RestNote("h"),
+            new Note("7|o-1|a0.45", "te", 25::ms, 75::ms),
+            new Note("6|o-1|a0.55", "te", 25::ms, 75::ms),
+            new Note("7|o-1|a0.45", "te", 25::ms, 75::ms),
+            new RestNote("h"),
+            new Note("7|o-1|a0.45", "te", 25::ms, 75::ms),
+            new Note("6|o-1|a0.55", "te", 25::ms, 75::ms),
+            new Note("7|o-1|a0.45", "te", 25::ms, 75::ms),
+            new Note("7|o-1|a0.45", "te", 25::ms, 75::ms),
+            new Note("6|o-1|a0.55", "te", 25::ms, 0::ms),
+            new Note("5|o-1|a0.45", "te", 25::ms, 0::ms),
         ] @=> Note seq2A[];
 
         // Add sequences to scene
@@ -353,6 +367,34 @@ class Scene8 extends Scene {
             [
                 new Sequence(seq1A, 24),
                 new Sequence(seq2A, 1),
+            ]
+        );
+    }
+}
+
+
+class Scene9 extends Scene {
+    fun @construct() {
+        [
+            new RestNote("w"),
+        ] @=> Note restMeasure[];
+
+        [
+            new Note("2|o0|a0.6", "e", 25::ms, 150::ms),
+            new Note("2|o1|a0.6", "s", 25::ms, 25::ms),
+            new RestNote("s"),
+
+            new RestNote("h"),
+
+            new Note("5|o0|a0.6", "e", 25::ms, 150::ms),
+            new Note("5|o-1|a0.6", "s", 25::ms, 25::ms),
+            new RestNote("s"),
+        ] @=> Note seq1A[];
+
+        // Add sequences to scene
+        this.setSeqs(
+            [
+                new Sequence(seq1A, 8),
             ]
         );
     }
@@ -372,5 +414,6 @@ public class Etune3Voice3Score extends Score {
         this.scenes << new Scene6();
         this.scenes << new Scene7();
         this.scenes << new Scene8();
+        this.scenes << new Scene9();
     }
 }
