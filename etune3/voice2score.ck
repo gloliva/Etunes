@@ -524,6 +524,28 @@ class Scene8 extends Scene {
             new Note("7|o1|a0.45", "s", 25::ms, 25::ms),
         ] @=> Note seq1B[];
 
+        [
+            new Note("7|o1|a0.06", "s", 25::ms, 25::ms),
+            new Note("7|o1|a0.09", "s", 25::ms, 25::ms),
+            new Note("7|o1|a0.12", "s", 25::ms, 25::ms),
+            new Note("7|o1|a0.19", "s", 25::ms, 25::ms),
+
+            new Note("6.9|o1|a0.22", "s", 25::ms, 25::ms),
+            new Note("6.5|o1|a0.24", "s", 25::ms, 25::ms),
+            new Note("6.3|o1|a0.27", "s", 25::ms, 25::ms),
+            new Note("6.1|o1|a0.30", "s", 25::ms, 25::ms),
+
+            new Note("6.0|o1|a0.33", "s", 25::ms, 25::ms),
+            new Note("5.8|o1|a0.37", "s", 25::ms, 25::ms),
+            new Note("5.5|o1|a0.42", "s", 25::ms, 25::ms),
+            new Note("5.3|o1|a0.45", "s", 25::ms, 25::ms),
+
+            new Note("5.2|o1|a0.48", "s", 25::ms, 25::ms),
+            new Note("5.0|o1|a0.50", "s", 25::ms, 25::ms),
+            new Note("4.7|o1|a0.52", "s", 25::ms, 25::ms),
+            new Note("4.5|o1|a0.55", "s", 25::ms, 25::ms),
+        ] @=> Note seq2A[];
+
 
         // Add sequences to scene
         this.setSeqs(
@@ -535,7 +557,8 @@ class Scene8 extends Scene {
 
                 new Sequence(seq1A, 16),
                 new Sequence(seq1B, 16),
-                new Sequence(restMeasure, 4),
+                new Sequence(restMeasure, 3),
+                new Sequence(seq2A, 1),
             ]
         );
     }
@@ -562,6 +585,16 @@ class Scene9 extends Scene {
             new Note("5|o1|a0.5", "s", 25::ms, 25::ms),
         ] @=> Note seq1B[];
 
+        [
+            new Note("6|o1|a0.6", "te", 25::ms, 75::ms),
+            new Note("8|o1|a0.5", "te", 25::ms, 75::ms),
+            new Note("6|o1|a0.5", "te", 25::ms, 25::ms),
+
+            new Note("6.3|o1|a0.6", "te", 25::ms, 75::ms),
+            new Note("8.5|o1|a0.5", "te", 20::ms, 75::ms),
+            new Note("6.3|o1|a0.5", "te", 20::ms, 75::ms),
+        ] @=> Note seq1C[];
+
         // Add sequences to scene
         this.setSeqs(
             [
@@ -570,7 +603,8 @@ class Scene9 extends Scene {
                 new Sequence(seq1A, 16),
                 new Sequence(seq1B, 16),
                 new Sequence(seq1A, 16),
-                new Sequence(seq1B, 16),
+                new Sequence(seq1B, 14),
+                new Sequence(seq1C, 1),
             ]
         );
     }

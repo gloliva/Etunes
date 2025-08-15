@@ -358,8 +358,8 @@ class Scene8 extends Scene {
             new Note("6|o-1|a0.55", "te", 25::ms, 75::ms),
             new Note("7|o-1|a0.45", "te", 25::ms, 75::ms),
             new Note("7|o-1|a0.45", "te", 25::ms, 75::ms),
-            new Note("6|o-1|a0.55", "te", 25::ms, 0::ms),
-            new Note("5|o-1|a0.45", "te", 25::ms, 0::ms),
+            new Note("6|o-1|a0.55", "te", 25::ms, 75::ms),
+            new RestNote("te"),
         ] @=> Note seq2A[];
 
         // Add sequences to scene
@@ -411,11 +411,7 @@ class Scene9 extends Scene {
             new Note("2|o2|a0.55", "s", 25::ms, 25::ms),
 
             new RestNote("q"),
-            new RestNote("e."),
-
-            new Note("8|o1|a0.45", "s", 25::ms, 25::ms),
-            new Note("5|o1|a0.55", "e", 25::ms, 150::ms),
-            new RestNote("e"),
+            new RestNote("h"),
         ] @=> Note seq1C[];
 
         // Add sequences to scene
