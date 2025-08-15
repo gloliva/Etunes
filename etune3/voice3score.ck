@@ -475,10 +475,62 @@ class Scene11 extends Scene {
             new RestNote("w"),
         ] @=> Note restMeasure[];
 
+        [
+            new Note("0|o-1|a0.05", "q", 25::ms, 250::ms),
+            new Note("0|o-1|a0.12", "q", 25::ms, 250::ms),
+            new Note("0|o-1|a0.18", "q", 25::ms, 250::ms),
+            new Note("0|o-1|a0.24", "q", 25::ms, 250::ms),
+            new Note("0|o-1|a0.3", "q", 25::ms, 250::ms),
+            new Note("0|o-1|a0.4", "q", 25::ms, 250::ms),
+            new Note("0|o-1|a0.5", "q", 25::ms, 250::ms),
+            new Note("0|o-1|a0.57", "q", 25::ms, 250::ms),
+        ] @=> Note seq1A[];
+
+        [
+            new Note("0|o-1|a0.6", "q", 25::ms, 250::ms),
+            new Note("0|o-1|a0.5", "q", 25::ms, 250::ms),
+            new Note("0|o-1|a0.6", "q", 25::ms, 250::ms),
+            new Note("0|o-1|a0.45", "q", 25::ms, 250::ms),
+        ] @=> Note seq1B[];
+
+        [
+            new Note("0|o-1|a0.6", "q/3", 25::ms, 25::ms),
+            new Note("0|o-1|a0.6", "q/3", 25::ms, 25::ms),
+            new Note("0|o-1|a0.6", "q/3", 25::ms, 25::ms),
+            new Note("0|o-1|a0.6", "h.", 25::ms, 500::ms),
+        ] @=> Note seq2A[];
+
+        [
+            new Note("9|o-2|a0.6", "q/3", 25::ms, 25::ms),
+            new Note("9|o-2|a0.6", "q/3", 25::ms, 25::ms),
+            new Note("9|o-2|a0.6", "q/3", 25::ms, 25::ms),
+            new Note("9|o-2|a0.6", "h.", 25::ms, 500::ms),
+        ] @=> Note seq2B[];
+
+        [
+            new Note("7|o-2|a0.6", "q/3", 25::ms, 25::ms),
+            new Note("7|o-2|a0.6", "q/3", 25::ms, 25::ms),
+            new Note("7|o-2|a0.6", "q/3", 25::ms, 25::ms),
+            new Note("7|o-2|a0.6", "h.", 25::ms, 500::ms),
+        ] @=> Note seq2C[];
+
         // Add sequences to scene
         this.setSeqs(
             [
-                new Sequence(restMeasure, 8),
+                new Sequence(seq1A, 1),
+                new Sequence(seq1B, 14),
+
+                new Sequence(seq2A, 2),
+                new Sequence(seq1B, 2),
+
+                new Sequence(seq2B, 2),
+                new Sequence(seq1B, 2),
+
+                new Sequence(seq2C, 1),
+                new Sequence(seq2B, 1),
+                new Sequence(seq2A, 2),
+                new Sequence(seq2B, 2),
+                new Sequence(seq2A, 2),
             ]
         );
     }

@@ -41,6 +41,7 @@ public class Etune3Metadata extends ScoreMetadata {
 
         // Set tempo changes
         this.setTempoChange(78., 10);
+        this.setTempoChange(128., 11);
 
         // Set tunings
         11 => int maxEDO;
