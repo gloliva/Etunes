@@ -125,7 +125,7 @@ public class Score {
                 ((seq.totalBeatValue * clock.quarterNote) * seq.repeats) + sceneDur => sceneDur;
             }
 
-            <<< "   ", "Scene", idx, "Approv duration:", sceneDur / 44100., "based on Tempo BPM:", clock.tempo >>>;
+            <<< "   ", "Scene", idx + 1, "Approv duration:", sceneDur / 44100., "based on Tempo BPM:", clock.tempo >>>;
         }
     }
 }
