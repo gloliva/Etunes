@@ -498,6 +498,46 @@ class Scene10 extends Scene {
             new RestNote("s"),
         ] @=> Note seq3C[];
 
+        [
+            new Note("6|o1|a0.35", "s/2", 15::ms, 15::ms),
+            new Note("6|o1|a0.4", "s/2", 15::ms, 15::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.35", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+        ] @=> Note seq4A[];
+
+        [
+            new Note("6|o2|a0.35", "s/2", 15::ms, 15::ms),
+            new Note("6|o2|a0.4", "s/2", 15::ms, 15::ms),
+            new Note("6|o2|a0.45", "s", 25::ms, 25::ms),
+            new Note("6|o2|a0.35", "s", 25::ms, 25::ms),
+            new Note("6|o2|a0.45", "s", 25::ms, 25::ms),
+        ] @=> Note seq4B[];
+
+        [
+            new Note("5|o1|a0.35", "s/2", 15::ms, 15::ms),
+            new Note("5|o1|a0.4", "s/2", 15::ms, 15::ms),
+            new Note("5|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("5|o1|a0.35", "s", 25::ms, 25::ms),
+            new Note("5|o1|a0.45", "s", 25::ms, 25::ms),
+        ] @=> Note seq4C[];
+
+        [
+            new Note("3|o1|a0.35", "s/2", 15::ms, 15::ms),
+            new Note("3|o1|a0.4", "s/2", 15::ms, 15::ms),
+            new Note("3|o1|a0.45", "s", 25::ms, 25::ms),
+            new Note("3|o1|a0.35", "s", 25::ms, 25::ms),
+            new Note("3|o1|a0.45", "s", 25::ms, 25::ms),
+        ] @=> Note seq4D[];
+
+        [
+            new Note("3|o1|a0.35", "s/2", 15::ms, 15::ms),
+            new Note("3|o1|a0.4", "s/2", 15::ms, 15::ms),
+            new Note("3|o1|a0.45", "s", 25::ms, 25::ms),
+            // new Note("3|o1|a0.35", "s", 25::ms, 25::ms),
+            new RestNote("e"),
+        ] @=> Note seq4E[];
+
 
         // Add sequences to scene
         this.setSeqs(
@@ -524,6 +564,14 @@ class Scene10 extends Scene {
                 new Sequence(seq3B, 1),
                 new Sequence(seq3C, 1),
 
+                new Sequence(seq4A, 8),
+                new Sequence(seq4B, 4),
+                new Sequence(seq4A, 4),
+                new Sequence(seq4C, 4),
+                new Sequence(seq4D, 2),
+                new Sequence(seq4C, 6),
+                new Sequence(seq4D, 3),
+                new Sequence(seq4E, 1),
             ]
         );
     }

@@ -456,6 +456,30 @@ class Scene10 extends Scene {
             new RestNote("q"),
         ] @=> Note seq1C[];
 
+        [
+            new Note("6|o-1|a0.55", "q", 25::ms, 100::ms),
+            new Note("6|o-1|a0.5", "q", 25::ms, 100::ms),
+            new Note("6|o-1|a0.55", "q", 25::ms, 100::ms),
+            new Note("6|o-1|a0.5", "q", 25::ms, 100::ms),
+
+            new Note("6|o-1|a0.55", "q", 25::ms, 100::ms),
+            new Note("6|o-1|a0.5", "q", 25::ms, 100::ms),
+            new Note("6|o-1|a0.55", "q", 25::ms, 100::ms),
+            new Note("0|o-1|a0.5", "q", 25::ms, 25::ms),
+        ] @=> Note seq2A[];
+
+        [
+            new Note("3|o-1|a0.55", "q", 25::ms, 100::ms),
+            new Note("3|o-1|a0.5", "q", 25::ms, 100::ms),
+            new Note("3|o-1|a0.55", "q", 25::ms, 100::ms),
+            new Note("3|o-1|a0.5", "q", 25::ms, 100::ms),
+
+            new Note("5|o-1|a0.55", "q", 25::ms, 100::ms),
+            new Note("5|o-1|a0.5", "q", 25::ms, 100::ms),
+            new Note("5|o-1|a0.55", "q", 25::ms, 100::ms),
+            new RestNote("q"),
+        ] @=> Note seq2B[];
+
         // Add sequences to scene
         this.setSeqs(
             [
@@ -463,6 +487,8 @@ class Scene10 extends Scene {
                 new Sequence(seq1B, 1),
                 new Sequence(seq1A, 3),
                 new Sequence(seq1C, 1),
+                new Sequence(seq2A, 2),
+                new Sequence(seq2B, 2),
             ]
         );
     }
