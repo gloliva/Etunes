@@ -436,6 +436,120 @@ class Scene9 extends Scene {
 }
 
 
+class Scene10 extends Scene {
+    fun @construct() {
+        [
+            new RestNote("w"),
+        ] @=> Note restMeasure[];
+
+        [
+            new RestNote("h"),
+            new RestNote("e"),
+            new Note("2|o1|a0.25", "e", 25::ms, 25::ms),
+            new Note("3|o1|a0.3", "e", 25::ms, 25::ms),
+            new Note("6|o1|a0.35", "e", 25::ms, 25::ms),
+        ] @=> Note seq1A[];
+
+        [
+            new Note("6|o1|a0.35", "s", 25::ms, 25::ms),
+            new Note("6|o1|a0.4", "s", 25::ms, 25::ms),
+            new RestNote("s"),
+            new Note("6|o1|a0.3", "s", 25::ms, 25::ms),
+        ] @=> Note seq2A[];
+
+        [
+            new Note("6|o1|a0.35", "s/2", 15::ms, 15::ms),
+            new Note("6|o1|a0.4", "s/2", 15::ms, 15::ms),
+            new Note("6|o1|a0.45", "s", 25::ms, 25::ms),
+            new RestNote("s"),
+            new Note("6|o1|a0.3", "s", 25::ms, 25::ms),
+        ] @=> Note seq2B[];
+
+        [
+            new Note("6|o1|a0.3", "s", 25::ms, 25::ms),
+            new RestNote("s"),
+            new Note("2|o1|a0.25", "e", 25::ms, 25::ms),
+            new Note("3|o1|a0.3", "e", 25::ms, 25::ms),
+            new Note("6|o1|a0.35", "e", 25::ms, 25::ms),
+        ] @=> Note seq2C[];
+
+        [
+            new Note("5|o1|a0.35", "s/2", 15::ms, 15::ms),
+            new Note("5|o1|a0.4", "s/2", 15::ms, 15::ms),
+            new Note("5|o1|a0.45", "s", 25::ms, 25::ms),
+            new RestNote("s"),
+            new Note("5|o1|a0.3", "s", 25::ms, 25::ms),
+        ] @=> Note seq3A[];
+
+        [
+            new Note("2|o1|a0.35", "s/2", 15::ms, 15::ms),
+            new Note("2|o1|a0.4", "s/2", 15::ms, 15::ms),
+            new Note("2|o1|a0.45", "s", 25::ms, 25::ms),
+            new RestNote("s"),
+            new Note("2|o1|a0.3", "s/2", 25::ms, 15::ms),
+            new Note("2|o1|a0.3", "s/2", 25::ms, 15::ms),
+        ] @=> Note seq3B[];
+
+        [
+            new Note("2|o1|a0.35", "s/2", 15::ms, 15::ms),
+            new Note("2|o1|a0.4", "s/4", 15::ms, 5::ms),
+            new Note("2|o1|a0.4", "s/4", 15::ms, 5::ms),
+            new Note("1|o1|a0.45", "s/2", 15::ms, 25::ms),
+            new Note("1|o1|a0.45", "s/2", 15::ms, 25::ms),
+            new RestNote("s"),
+            new Note("0|o1|a0.3", "s/4", 15::ms, 5::ms),
+            new Note("0|o1|a0.3", "s/4", 15::ms, 5::ms),
+            new Note("9|o0|a0.35", "s/2", 15::ms, 15::ms),
+        ] @=> Note seq3C[];
+
+
+        // Add sequences to scene
+        this.setSeqs(
+            [
+                new Sequence(restMeasure, 7),
+                new Sequence(seq1A, 1),
+
+                new Sequence(seq2A, 3),
+                new Sequence(seq2B, 1),
+                new Sequence(seq2A, 2),
+                new Sequence(seq2C, 1),
+                new Sequence(seq2A, 3),
+                new Sequence(seq2B, 1),
+                new Sequence(seq2A, 2),
+                new Sequence(seq2C, 1),
+
+                new Sequence(seq2B, 2),
+                new Sequence(seq2A, 2),
+                new Sequence(seq2B, 2),
+                new Sequence(seq2C, 1),
+
+                new Sequence(seq2B, 4),
+                new Sequence(seq3A, 2),
+                new Sequence(seq3B, 1),
+                new Sequence(seq3C, 1),
+
+            ]
+        );
+    }
+}
+
+
+class Scene11 extends Scene {
+    fun @construct() {
+        [
+            new RestNote("w"),
+        ] @=> Note restMeasure[];
+
+        // Add sequences to scene
+        this.setSeqs(
+            [
+                new Sequence(restMeasure, 8),
+            ]
+        );
+    }
+}
+
+
 public class Etune3Voice4Score extends Score {
     fun @construct() {
         4 => this.voiceNum;
@@ -450,5 +564,7 @@ public class Etune3Voice4Score extends Score {
         this.scenes << new Scene7();
         this.scenes << new Scene8();
         this.scenes << new Scene9();
+        this.scenes << new Scene10();
+        this.scenes << new Scene11();
     }
 }
