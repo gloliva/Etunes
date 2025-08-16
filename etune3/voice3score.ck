@@ -407,11 +407,18 @@ class Scene9 extends Scene {
 
         [
             new Note("2|o0|a0.6", "e", 25::ms, 150::ms),
-            new Note("2|o1|a0.6", "s", 25::ms, 25::ms),
-            new Note("2|o2|a0.55", "s", 25::ms, 25::ms),
+            new Note("5|o0|a0.54", "e.", 25::ms, 250::ms),
 
-            new RestNote("q"),
-            new RestNote("h"),
+            new RestNote("e."),
+            new Note("5|o-1|a0.10", "s", 25::ms, 0::ms),
+            new Note("5.1|o-1|a0.16", "s", 0::ms, 0::ms),
+            new Note("5.13|o-1|a0.20", "s", 0::ms, 0::ms),
+            new Note("5.19|o-1|a0.23", "s", 0::ms, 0::ms),
+
+            new Note("5.23|o-1|a0.27", "s", 0::ms, 0::ms),
+            new Note("5.29|o-1|a0.31", "s", 0::ms, 0::ms),
+            new Note("5.35|o-1|a0.35", "s", 0::ms, 0::ms),
+            new Note("5.43|o-1|a0.38", "s", 0::ms, 0::ms),
         ] @=> Note seq1C[];
 
         // Add sequences to scene
