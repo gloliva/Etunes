@@ -543,6 +543,26 @@ class Scene11 extends Scene {
             new Note("7|o-2|a0.6", "h.", 25::ms, 500::ms),
         ] @=> Note seq2C[];
 
+        [
+            new Note("0|o-1|a0.6", "q", 15::ms, 250::ms),
+
+            new Note("0|o-1|a0.6", "q", 50::ms, 0::ms),
+            new Note("0|o-1|a0.6", "w", 0::ms, 350::ms),
+
+            new RestNote("h"),
+        ] @=> Note seq3A[];
+
+        [
+            new Note("9|o-2|a0.6", "te", 15::ms, 75::ms),
+            new Note("9|o-2|a0.6", "te", 15::ms, 75::ms),
+            new Note("9|o-2|a0.6", "te", 15::ms, 75::ms),
+
+            new Note("9|o-2|a0.6", "q", 50::ms, 0::ms),
+            new Note("9|o-2|a0.6", "w", 0::ms, 350::ms),
+
+            new RestNote("h"),
+        ] @=> Note seq3B[];
+
         // Add sequences to scene
         this.setSeqs(
             [
@@ -560,6 +580,18 @@ class Scene11 extends Scene {
                 new Sequence(seq2A, 2),
                 new Sequence(seq2B, 2),
                 new Sequence(seq2A, 2),
+                new Sequence(seq2B, 2),
+                new Sequence(seq2A, 2),
+                new Sequence(seq2B, 2),
+                new Sequence(seq2A, 2),
+                new Sequence(seq2B, 2),
+
+                new Sequence(seq3A, 1),
+                new Sequence(seq3B, 1),
+                new Sequence(seq3A, 1),
+                new Sequence(seq3B, 1),
+
+                new Sequence(seq3A, 1),
             ]
         );
     }

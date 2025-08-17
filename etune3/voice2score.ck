@@ -779,6 +779,108 @@ class Scene11 extends Scene {
             new Note("3|o2|a0.3", "s", 25::ms, 25::ms),
         ] @=> Note seq2A[];
 
+        [
+            new Note("4|o1|a0.38", "w", 1300::ms, 0::ms),
+        ] @=> Note seq3C[];
+
+        [
+            new Note("4|o1|a0.5", "te", 25::ms, 75::ms),
+            new Note("4|o1|a0.35", "te", 25::ms, 75::ms),
+            new Note("4|o1|a0.45", "te", 25::ms, 75::ms),
+
+            new Note("7|o1|a0.55", "e", 25::ms, 125::ms),
+            new Note("7|o1|a0.4", "e", 25::ms, 125::ms),
+
+            new Note("4|o2|a0.5", "te", 25::ms, 75::ms),
+            new Note("4|o1|a0.35", "te", 25::ms, 75::ms),
+            new Note("4|o2|a0.45", "te", 25::ms, 75::ms),
+
+            new Note("7|o2|a0.5", "te", 25::ms, 75::ms),
+            new Note("8|o1|a0.45", "te", 25::ms, 75::ms),
+            new Note("7|o2|a0.4", "te", 25::ms, 75::ms),
+        ] @=> Note seq3A[];
+
+        [
+            new Note("2|o1|a0.5", "te", 25::ms, 75::ms),
+            new Note("2|o1|a0.35", "te", 25::ms, 75::ms),
+            new Note("2|o1|a0.45", "te", 25::ms, 75::ms),
+
+            new Note("7|o1|a0.55", "e", 25::ms, 125::ms),
+            new Note("7|o1|a0.4", "e", 25::ms, 125::ms),
+
+            new Note("4|o2|a0.5", "te", 25::ms, 75::ms),
+            new Note("4|o1|a0.35", "te", 25::ms, 75::ms),
+            new Note("4|o2|a0.45", "te", 25::ms, 75::ms),
+
+            new Note("7|o2|a0.5", "te", 25::ms, 75::ms),
+            new Note("9|o1|a0.45", "te", 25::ms, 75::ms),
+            new Note("7|o2|a0.4", "te", 25::ms, 75::ms),
+        ] @=> Note seq3B[];
+
+        [
+            new Note("4|o1|a0.5", "te", 25::ms, 75::ms),
+            new Note("4|o1|a0.35", "te", 25::ms, 75::ms),
+            new Note("4|o1|a0.45", "te", 25::ms, 75::ms),
+
+            new Note("7|o1|a0.55", "e", 25::ms, 125::ms),
+            new Note("7|o1|a0.4", "e", 25::ms, 125::ms),
+
+            new Note("4|o2|a0.5", "te", 25::ms, 75::ms),
+            new Note("4|o1|a0.35", "te", 25::ms, 75::ms),
+            new Note("4|o2|a0.45", "te", 25::ms, 75::ms),
+
+            new Note("7|o2|a0.5", "te", 25::ms, 75::ms),
+            new Note("8|o1|a0.45", "te", 25::ms, 75::ms),
+            new Note("7|o2|a0.4", "te", 25::ms, 75::ms),
+
+            new Note("4|o1|a0.45", "te", 25::ms, 75::ms),
+            new Note("4|o1|a0.35", "te", 25::ms, 75::ms),
+            new Note("4|o1|a0.35", "te", 25::ms, 75::ms),
+
+            new Note("7|o1|a0.45", "e", 25::ms, 125::ms),
+            new Note("7|o1|a0.28", "e", 25::ms, 125::ms),
+
+            new Note("4|o2|a0.40", "te", 25::ms, 75::ms),
+            new Note("4|o1|a0.35", "te", 25::ms, 75::ms),
+            new Note("4|o2|a0.32", "te", 25::ms, 75::ms),
+
+            new Note("7|o2|a0.35", "te", 25::ms, 75::ms),
+            new Note("8|o1|a0.31", "te", 25::ms, 75::ms),
+            new Note("7|o2|a0.28", "te", 25::ms, 75::ms),
+        ] @=> Note seq4A[];
+
+        [
+            new Note("2|o1|a0.35", "te", 25::ms, 75::ms),
+            new Note("2|o1|a0.25", "te", 25::ms, 75::ms),
+            new Note("2|o1|a0.30", "te", 25::ms, 75::ms),
+
+            new Note("7|o1|a0.35", "e", 25::ms, 125::ms),
+            new Note("7|o1|a0.28", "e", 25::ms, 125::ms),
+
+            new Note("4|o2|a0.35", "te", 25::ms, 75::ms),
+            new Note("4|o1|a0.25", "te", 25::ms, 75::ms),
+            new Note("4|o2|a0.30", "te", 25::ms, 75::ms),
+
+            new Note("7|o2|a0.35", "te", 25::ms, 75::ms),
+            new Note("9|o1|a0.30", "te", 25::ms, 75::ms),
+            new Note("7|o2|a0.25", "te", 25::ms, 75::ms),
+
+            new Note("2|o1|a0.28", "te", 25::ms, 75::ms),
+            new Note("2|o1|a0.25", "te", 25::ms, 75::ms),
+            new Note("2|o1|a0.23", "te", 25::ms, 75::ms),
+
+            new Note("7|o1|a0.25", "e", 25::ms, 125::ms),
+            new Note("7|o1|a0.25", "e", 25::ms, 125::ms),
+
+            new Note("4|o2|a0.23", "te", 25::ms, 75::ms),
+            new Note("4|o1|a0.21", "te", 25::ms, 75::ms),
+            new Note("4|o2|a0.18", "te", 25::ms, 75::ms),
+
+            new Note("7|o2|a0.17", "te", 25::ms, 75::ms),
+            new Note("9|o1|a0.16", "te", 25::ms, 75::ms),
+            new Note("7|o2|a0.13", "te", 25::ms, 75::ms),
+        ] @=> Note seq4B[];
+
         // Add sequences to scene
         this.setSeqs(
             [
@@ -792,7 +894,23 @@ class Scene11 extends Scene {
                 new Sequence(seq2A, 2),
                 new Sequence(restMeasure, 2),
                 new Sequence(seq2A, 2),
-                new Sequence(restMeasure, 4),
+
+                new Sequence(restMeasure, 1),
+                new Sequence(seq3C, 1),
+                new Sequence(seq3A, 2),
+                new Sequence(seq3B, 2),
+                new Sequence(seq3A, 2),
+                new Sequence(seq3B, 2),
+                new Sequence(seq3A, 2),
+                new Sequence(seq3B, 2),
+                new Sequence(seq3A, 2),
+                new Sequence(seq3B, 2),
+                new Sequence(seq3A, 2),
+                new Sequence(seq3B, 2),
+
+                new Sequence(seq4A, 1),
+                new Sequence(seq4B, 1),
+                new Sequence(restMeasure, 2),
             ]
         );
     }
