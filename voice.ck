@@ -118,7 +118,7 @@ public class Voice {
 
         // Ramp down if release is not 0
         if (note.release / 1::samp != 0){
-            this.voiceEnv.ramp(note.release, 0.);
+            this.voiceEnv.ramp(note.release, note.releaseAmp);
             note.release => now;
         }
     }

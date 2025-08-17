@@ -11,6 +11,7 @@ public class Note {
     float degree;
     int octaveDiff;
     float amp;
+    float releaseAmp;
 
     // Timing variables
     float beatValue;
@@ -33,6 +34,7 @@ public class Note {
         0. => float degree;
         0 => int octaveDiff;
         0.5 => float amp;
+        0. => float releaseAmp;
 
         while (strtok.more()) {
             strtok.next() => string token;
@@ -45,6 +47,10 @@ public class Note {
             } else if (token.charAt(0) == "a".charAt(0)) {
                 token.substring(1).toFloat() => amp;
 
+            // Check for release amplitude
+            } else if (token.charAt(0) == "r".charAt(0)) {
+                token.substring(1).toFloat() => releaseAmp;
+
             // Else pitch info
             } else {
                 token.toFloat() => degree;
@@ -55,6 +61,7 @@ public class Note {
         degree => this.degree;
         octaveDiff => this.octaveDiff;
         amp => this.amp;
+        releaseAmp => this.releaseAmp;
 
         // Parse rhythm information
         Smuckish.rhythms(rhythmInfo)[0] => float beatValue;

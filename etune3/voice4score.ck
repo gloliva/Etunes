@@ -821,6 +821,34 @@ class Scene11 extends Scene {
 }
 
 
+class Scene12 extends Scene {
+    fun @construct() {
+        [
+            new RestNote("w"),
+        ] @=> Note restMeasure[];
+
+        [
+            new Note("4|o1|a0.35", "te", 15::ms, 75::ms),
+            new Note("4|o1|a0.35", "te", 15::ms, 75::ms),
+            new Note("4|o1|a0.35", "te", 15::ms, 75::ms),
+
+            new Note("2|o1|a0.35", "h", 50::ms, 0::ms),
+            new Note("2|o1|a0.35", "h.", 0::ms, 0::ms),
+            new Note("2|o1|a0.35", "w", 0::ms, 1800::ms),
+            new RestNote("h"),
+        ] @=> Note seq1A[];
+
+        // Add sequences to scene
+        this.setSeqs(
+            [
+                new Sequence(seq1A, 1),
+                new Sequence(restMeasure, 3),
+            ]
+        );
+    }
+}
+
+
 public class Etune3Voice4Score extends Score {
     fun @construct() {
         4 => this.voiceNum;
@@ -837,5 +865,6 @@ public class Etune3Voice4Score extends Score {
         this.scenes << new Scene9();
         this.scenes << new Scene10();
         this.scenes << new Scene11();
+        this.scenes << new Scene12();
     }
 }

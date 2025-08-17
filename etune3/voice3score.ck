@@ -598,6 +598,61 @@ class Scene11 extends Scene {
 }
 
 
+class Scene12 extends Scene {
+    fun @construct() {
+        [
+            new RestNote("w"),
+        ] @=> Note restMeasure[];
+
+        [
+            new Note("10|o-2|a0.6", "te", 15::ms, 75::ms),
+            new Note("10|o-2|a0.6", "te", 15::ms, 75::ms),
+            new Note("10|o-2|a0.6", "te", 15::ms, 75::ms),
+
+            new Note("10|o-2|a0.6", "h", 50::ms, 0::ms),
+            new Note("10|o-2|a0.6", "w", 0::ms, 0::ms),
+            new Note("10|o-2|a0.6|r0.1", "w", 0::ms, 1800::ms),
+
+            new Note("10|o-2|a0.1", "s", 0::ms, 0::ms),
+            new Note("10|o-2|a0.09", "s", 0::ms, 0::ms),
+            new Note("10|o-2|a0.08", "s", 0::ms, 0::ms),
+            new Note("10|o-2|a0.07", "s", 0::ms, 10::ms),
+        ] @=> Note seq1A[];
+
+        [
+            new Note("10|o-2|a0.06", "s", 0::ms, 0::ms),
+            new Note("10|o-2|a0.05", "s", 0::ms, 0::ms),
+            new Note("10|o-2|a0.04", "s", 0::ms, 0::ms),
+            new Note("10|o-2|a0.03", "s", 0::ms, 0::ms),
+
+            new Note("10|o-2|a0.02", "s", 0::ms, 0::ms),
+            new Note("10|o-2|a0.01", "s", 0::ms, 0::ms),
+            new Note("10|o-2|a0.009", "s", 0::ms, 0::ms),
+            new Note("10|o-2|a0.008", "s", 0::ms, 0::ms),
+
+            new Note("10|o-2|a0.007", "s", 0::ms, 0::ms),
+            new Note("10|o-2|a0.006", "s", 0::ms, 0::ms),
+            new Note("10|o-2|a0.005", "s", 0::ms, 0::ms),
+            new Note("10|o-2|a0.004", "s", 0::ms, 0::ms),
+
+            new Note("10|o-2|a0.003", "s", 0::ms, 0::ms),
+            new Note("10|o-2|a0.002", "s", 0::ms, 0::ms),
+            new Note("10|o-2|a0.001", "s", 0::ms, 0::ms),
+            new Note("10|o-2|a0.0005", "s", 0::ms, 10::ms),
+        ] @=> Note seq1B[];
+
+        // Add sequences to scene
+        this.setSeqs(
+            [
+                new Sequence(seq1A, 1),
+                new Sequence(seq1B, 1),
+                new Sequence(restMeasure, 2),
+            ]
+        );
+    }
+}
+
+
 public class Etune3Voice3Score extends Score {
     fun @construct() {
         3 => this.voiceNum;
@@ -614,5 +669,6 @@ public class Etune3Voice3Score extends Score {
         this.scenes << new Scene9();
         this.scenes << new Scene10();
         this.scenes << new Scene11();
+        this.scenes << new Scene12();
     }
 }
