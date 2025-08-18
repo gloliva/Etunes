@@ -8,32 +8,6 @@ public class Etune3Metadata extends ScoreMetadata {
         4 => this.numVoices;
         128. => this.tempo;
 
-        // [
-        //     -1,
-        //     // 1,
-        //     // 2
-        //     3,
-        //     4,
-        // ] @=> this.excludedVoices;
-
-        // [
-        //     -1,
-        //     // 1,
-        //     // 2,
-        //     // 3,
-        //     // 4,
-
-        //     // 5,
-        //     // 6,
-        //     // 7,
-        //     // 8,
-
-        //     // 9,
-        //     // 10,
-        //     // 11,
-        //     // 12,
-        // ] @=> this.excludedScenes;
-
         // Set voice scores
         this.voiceScores << new Etune3Voice1Score();
         this.voiceScores << new Etune3Voice2Score();
