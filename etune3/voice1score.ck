@@ -189,29 +189,29 @@ class Scene4 extends Scene {
         ] @=> Note restMeasure[];
 
         [
-            new Note("0|o0|a0.5", "h/3", 150::ms, 150::ms),
-            new Note("0|o0|a0.4", "h/3", 150::ms, 150::ms),
-            new Note("0|o0|a0.5", "h/3", 150::ms, 150::ms),
+            new Note("0|o0|a0.45", "h/3", 150::ms, 150::ms),
+            new Note("0|o0|a0.35", "h/3", 150::ms, 150::ms),
+            new Note("0|o0|a0.45", "h/3", 150::ms, 150::ms),
 
-            new Note("0|o0|a0.5", "h/6", 75::ms, 75::ms),
-            new Note("1|o0|a0.4", "h/6", 75::ms, 75::ms),
-            new Note("0|o0|a0.5", "h/6", 75::ms, 75::ms),
-            new Note("3|o0|a0.5", "h/6", 75::ms, 75::ms),
-            new Note("0|o0|a0.4", "h/6", 75::ms, 75::ms),
-            new Note("2|o0|a0.5", "h/6", 75::ms, 75::ms),
+            new Note("0|o0|a0.45", "h/6", 75::ms, 75::ms),
+            new Note("1|o0|a0.35", "h/6", 75::ms, 75::ms),
+            new Note("0|o0|a0.45", "h/6", 75::ms, 75::ms),
+            new Note("3|o0|a0.45", "h/6", 75::ms, 75::ms),
+            new Note("0|o0|a0.35", "h/6", 75::ms, 75::ms),
+            new Note("2|o0|a0.45", "h/6", 75::ms, 75::ms),
         ] @=> Note seq1A[];
 
         [
-            new Note("2|o0|a0.5", "h/3", 150::ms, 150::ms),
+            new Note("2|o0|a0.45", "h/3", 150::ms, 150::ms),
             new Note("2|o0|a0.4", "h/3", 150::ms, 150::ms),
-            new Note("2|o0|a0.5", "h/3", 150::ms, 150::ms),
+            new Note("2|o0|a0.45", "h/3", 150::ms, 150::ms),
 
-            new Note("1|o0|a0.5", "h/6", 75::ms, 75::ms),
+            new Note("1|o0|a0.45", "h/6", 75::ms, 75::ms),
             new Note("2|o0|a0.4", "h/6", 75::ms, 75::ms),
-            new Note("1|o0|a0.5", "h/6", 75::ms, 75::ms),
-            new Note("0|o1|a0.5", "h/6", 75::ms, 75::ms),
+            new Note("1|o0|a0.45", "h/6", 75::ms, 75::ms),
+            new Note("0|o1|a0.45", "h/6", 75::ms, 75::ms),
             new Note("1|o0|a0.4", "h/6", 75::ms, 75::ms),
-            new Note("3|o0|a0.5", "h/6", 75::ms, 75::ms),
+            new Note("3|o0|a0.45", "h/6", 75::ms, 75::ms),
         ] @=> Note seq1B[];
 
         [
